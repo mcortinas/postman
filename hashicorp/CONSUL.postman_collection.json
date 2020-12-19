@@ -1,0 +1,668 @@
+{
+	"info": {
+		"_postman_id": "b2f2cc61-bafd-4607-9a68-2076b5bf92f2",
+		"name": "CONSUL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health",
+			"item": [
+				{
+					"name": "Service agm-remarks-checker",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/health/service/lb-agm-remarks-checker",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"health",
+								"service",
+								"lb-agm-remarks-checker"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Node",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/health/node/gke-gke1-four-pool-16d065a6-15bd1e9b-imkh",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"health",
+								"node",
+								"gke-gke1-four-pool-16d065a6-15bd1e9b-imkh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "State Passing",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/health/state/passing?ns=default",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"health",
+								"state",
+								"passing"
+							],
+							"query": [
+								{
+									"key": "ns",
+									"value": "default"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "State Critical",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/health/state/critical?ns=default",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"health",
+								"state",
+								"critical"
+							],
+							"query": [
+								{
+									"key": "ns",
+									"value": "default"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Service lb-me-adaptive-pricing",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/health/service/lb-me-adaptive-pricing",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"health",
+								"service",
+								"lb-me-adaptive-pricing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checks lb-me-adaptive-pricing",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/health/checks/lb-agm-remarks-checker",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"health",
+								"checks",
+								"lb-agm-remarks-checker"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b3978bea-8797-4ae8-aac8-4d5d59de878a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "4ff79866-f31f-4c2b-91d5-a3bf35d47fbc",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Federation",
+			"item": [
+				{
+					"name": "Datacenters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/catalog/datacenters",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"catalog",
+								"datacenters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Nodes in GCP01",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/catalog/nodes?dc=gcp01",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"catalog",
+								"nodes"
+							],
+							"query": [
+								{
+									"key": "dc",
+									"value": "gcp01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Nodes in GCP02",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/catalog/nodes?dc=gcp02",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"catalog",
+								"nodes"
+							],
+							"query": [
+								{
+									"key": "dc",
+									"value": "gcp02"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ALL QUERIES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/query",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "QUERY TEST GCP",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/query/e866015b-d48e-e307-f3a8-b355fec3e632",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"query",
+								"e866015b-d48e-e307-f3a8-b355fec3e632"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EXPLAIN QUERY TEST GCP",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/query//explain",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"query",
+								"",
+								"explain"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read WAN COORDINATES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/coordinate/datacenters",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"coordinate",
+								"datacenters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read LAN COORDINATES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/coordinate/nodes",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"coordinate",
+								"nodes"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "942cf4d4-b49c-4728-b0c4-8f7fbf0ca4ab",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "528452e0-b0c4-4102-ae15-087b90139fc9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Events",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/event/list",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"event",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "dfbd4a56-9a9e-4974-b6c2-81556d950db6",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "069c3b44-97d1-4b4d-bd04-39ae697035a8",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Catalog",
+			"item": [
+				{
+					"name": "Datacenters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/catalog/datacenters",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"catalog",
+								"datacenters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Nodes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/catalog/nodes",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"catalog",
+								"nodes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Services",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/catalog/services",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"catalog",
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Map of Services for a Node",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/catalog/node/gke-gke1-four-pool-16d065a6-15bd1e9b-imkh",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"catalog",
+								"node",
+								"gke-gke1-four-pool-16d065a6-15bd1e9b-imkh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Map of Services for a Node External",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/catalog/node/k8s-sync",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"catalog",
+								"node",
+								"k8s-sync"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Services for Node",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/catalog/node-services/konsuletes-gke1-consul-server-0",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"catalog",
+								"node-services",
+								"konsuletes-gke1-consul-server-0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Nodes for Connect-capable Service",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/catalog/connect/lb-me-adaptive-pricing",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"catalog",
+								"connect",
+								"lb-me-adaptive-pricing"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Config",
+			"item": [
+				{
+					"name": "List Configurations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/config/service-defaults",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"config",
+								"service-defaults"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Status",
+			"item": [
+				{
+					"name": "Leader Raft",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/status/leader",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"status",
+								"leader"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Peers Raft",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{consul_host}}/v1/status/peers",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"status",
+								"peers"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Checks",
+			"item": [
+				{
+					"name": "Basic TCP Checks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "47d95285-46f1-44ae-860c-95ce05388636",
+								"exec": [
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Node\": \"k8s-sync\",\n    \"Address\": \"127.0.0.1\",\n    \"NodeMeta\": {\n\t\t\"external-node\": \"true\",\n\t\t\"external-probe\": \"true\"\n\t},   \n\t\"Service\": {\n\t\t\"ID\": \"cp-broker-headless-1504c7f2dc11\",\n\t\t\"Service\": \"cp-broker-headless\",\n\t\t\"Tags\": [\n\t\t\t\"minikube\",\n\t\t\t\"broker-headless\",\n\t\t\t\"kafka-headless\"\n\t\t],\n\t\t\"Address\": \"172.17.0.4\",\n\t\t\"Meta\": {\n\t\t\t\"environment\": \"dev\",\n\t\t\t\"external-k8s-ns\": \"default\",\n\t\t\t\"external-source\": \"kubernetes\",\n\t\t\t\"port-broker\": \"9092\"\n\t\t},\n\t\t\"Port\": 9092,\n\t\t\"Weights\": {\n\t\t\t\"Passing\": 1,\n\t\t\t\"Warning\": 1\n\t\t},\n\t\t\"EnableTagOverride\": false,\n\t\t\"ProxyDestination\": \"\",\n\t\t\"Proxy\": {},\n\t\t\"Connect\": {},\n\t\t\"CreateIndex\": 38,\n\t\t\"ModifyIndex\": 38\n\t},\n\t\"Check\": {\n\t\t\"CheckID\": \"cp-broker-headless-1504c7f2dc11\",\n\t\t\"Name\": \"cp-broker-headless health check\",\n\t\t\"Status\": \"critical\",\n\t\t\"ServiceID\": \"cp-broker-headless-1504c7f2dc11\",\n\t\t\"Definition\": {\n\t\t\t\"TCP\": \"172.17.0.4:9200\",\n\t\t\t\"Interval\": \"5s\",\n\t\t\t\"Timeout\": \"1s\",\n\t\t\t\"DeregisterCriticalServiceAfter\": \"0\"\n\t\t}\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{consul_host}}/v1/catalog/register",
+							"host": [
+								"{{consul_host}}"
+							],
+							"path": [
+								"v1",
+								"catalog",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

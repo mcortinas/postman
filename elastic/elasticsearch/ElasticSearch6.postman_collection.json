@@ -1,0 +1,1029 @@
+{
+	"info": {
+		"_postman_id": "afef580f-20ed-4cba-9acc-73eded5efb59",
+		"name": "ElasticSearch API 6.x",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ElasticSearch API Nodes OS forked",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/_nodes/os?pretty",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_nodes",
+						"os"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Cat Nodes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/_cat/nodes?pretty&v&h=ip,port,http_address,name,id&full_id=true",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_cat",
+						"nodes"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						},
+						{
+							"key": "v",
+							"value": null
+						},
+						{
+							"key": "h",
+							"value": "ip,port,http_address,name,id"
+						},
+						{
+							"key": "full_id",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch Cat Shards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/_cat/shards?pretty&v&s=state",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_cat",
+						"shards"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						},
+						{
+							"key": "v",
+							"value": null
+						},
+						{
+							"key": "s",
+							"value": "state"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch Get Tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/_tasks?pretty&v",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_tasks"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						},
+						{
+							"key": "v",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch Cat Indices",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/_cat/indices?v&s=store.size:desc",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_cat",
+						"indices"
+					],
+					"query": [
+						{
+							"key": "v",
+							"value": null
+						},
+						{
+							"key": "s",
+							"value": "store.size:desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch Delete Indices",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/alex*",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"alex*"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch Get Indices Segments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/_segments",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_segments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch Get All Aliases",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/_alias/*",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_alias",
+						"*"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Nodes Stats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/_nodes/stats?pretty",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_nodes",
+						"stats"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Nodes Hot Threads",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/_nodes/hot_threads?pretty",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_nodes",
+						"hot_threads"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Nodes Thread Pool",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/_nodes/thread_pool?pretty",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_nodes",
+						"thread_pool"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Cluster Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/_cluster/health?pretty",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_cluster",
+						"health"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Cluster Version",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}",
+					"host": [
+						"{{es_url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Cat Thread Pool",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/_cat/thread_pool?v&s=rejected:desc&h=node_name,node_id,name,active,queue,rejected",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_cat",
+						"thread_pool"
+					],
+					"query": [
+						{
+							"key": "v",
+							"value": null
+						},
+						{
+							"key": "s",
+							"value": "rejected:desc"
+						},
+						{
+							"key": "h",
+							"value": "node_name,node_id,name,active,queue,rejected"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Stats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/_stats?pretty",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_stats"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Cat Allocation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/_cat/allocation?pretty&v&s=disk.percent:desc",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_cat",
+						"allocation"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						},
+						{
+							"key": "v",
+							"value": null
+						},
+						{
+							"key": "s",
+							"value": "disk.percent:desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Cat Recovery",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/_cat/recovery?pretty&v",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_cat",
+						"recovery"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						},
+						{
+							"key": "v",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Get Snapshots",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/_cat/snapshots/gcs/",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_cat",
+						"snapshots",
+						"gcs",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Cluster Allocation Explain",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/_cluster/allocation/explain?pretty&include_disk_info=false&include_yes_decisions=false",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_cluster",
+						"allocation",
+						"explain"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						},
+						{
+							"key": "include_disk_info",
+							"value": "false"
+						},
+						{
+							"key": "include_yes_decisions",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Cluster Get Settings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/_cluster/settings?include_defaults=false",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_cluster",
+						"settings"
+					],
+					"query": [
+						{
+							"key": "include_defaults",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Cluster Get Nodes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/_cluster/settings?include_defaults=true",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_cluster",
+						"settings"
+					],
+					"query": [
+						{
+							"key": "include_defaults",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Cluster Update Settings",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"persistent\": {},\n    \"transient\": {\n        \"indices\": {\n            \"recovery\": {\n                \"concurrent_streams\": \"64\"\n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{es_url}}/_cluster/settings",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_cluster",
+						"settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Cluster Update Settings Exclude IP",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"transient\" : {\n    \"cluster.routing.allocation.exclude._ip\" : \"10.2.80.*\"\n  }\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{es_url}}/_cluster/settings",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_cluster",
+						"settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Get Index Settings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/odigeo_4_*/_settings",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"odigeo_4_*",
+						"_settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Get Index Templates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/_template/",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_template",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Watcher Stats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/_watcher/stats/_all",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_watcher",
+						"stats",
+						"_all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Index Update Settings",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"index\" : {\n        \"refresh_interval\": \"5s\"\n    }\n}\n",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{es_url}}/app-*/_settings",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"app-*",
+						"_settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Index Update read_only_allow_delete",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"index.blocks.read_only_allow_delete\": null\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{es_url}}/app-*/_settings",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"app-*",
+						"_settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Create Index Template",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"order\": 0,\n  \"template\": \"odigeo_4_*\",\n  \"settings\": {\n    \"index.number_of_replicas\": \"1\",\n    \"index.number_of_shards\": \"2\",\n      \"index.refresh_interval\": \"30s\"\n  },\n  \"mappings\": {\n    \"calendarsearch\": {\n      \"_id\": {\n        \"path\": \"id\",\n        \"index\": \"not_analyzed\"\n      },\n      \"_timestamp\": {\n        \"path\": \"timestamp\",\n        \"enabled\": true\n      },\n      \"_all\": {\n        \"enabled\": false\n      },\n      \"properties\": {\n        \"website\": {\n          \"index\": \"not_analyzed\",\n          \"type\": \"string\"\n        },\n        \"triptype\": {\n          \"index\": \"not_analyzed\",\n          \"type\": \"string\"\n        },\n        \"origin\": {\n          \"type\": \"long\"\n        },\n        \"destination\": {\n          \"type\": \"long\"\n        },\n        \"mktPortal\": {\n          \"index\": \"not_analyzed\",\n          \"type\": \"string\"\n        },\n        \"calendarSearchFareItineraryResultDTOs\": {\n          \"type\": \"nested\",\n          \"properties\": {\n            \"apparentPrices\": {\n              \"properties\": {\n                \"appartentPrice\": {\n                  \"properties\": {\n                    \"amount\": {\n                      \"index\": \"no\",\n                      \"type\": \"long\"\n                    },\n                    \"currency\": {\n                      \"index\": \"no\",\n                      \"type\": \"string\"\n                    }\n                  }\n                },\n                \"apparentPrice\": {\n                  \"properties\": {\n                    \"amount\": {\n                      \"index\": \"no\",\n                      \"type\": \"double\"\n                    },\n                    \"currency\": {\n                      \"index\": \"no\",\n                      \"type\": \"string\"\n                    }\n                  }\n                },\n                \"apparentPriceCriteria\": {\n                  \"index\": \"not_analyzed\",\n                  \"type\": \"string\"\n                }\n              }\n            },\n            \"fee\": {\n              \"properties\": {\n                \"amount\": {\n                  \"index\": \"no\",\n                  \"type\": \"long\"\n                },\n                \"currency\": {\n                  \"index\": \"no\",\n                  \"type\": \"string\"\n                }\n              }\n            },\n            \"inboundSegments\": {\n              \"properties\": {\n                \"carrier\": {\n                  \"index\": \"no\",\n                  \"type\": \"string\"\n                },\n                \"arrDate\": {\n                  \"format\": \"dateOptionalTime\",\n                  \"index\": \"no\",\n                  \"type\": \"date\"\n                },\n                \"stopOvers\": {\n                  \"index\": \"no\",\n                  \"type\": \"long\"\n                },\n                \"depGeoNodeId\": {\n                  \"type\": \"long\"\n                },\n                \"arrGeoNodeId\": {\n                  \"index\": \"not_analyzed\",\n                  \"type\": \"long\"\n                },\n                \"depDate\": {\n                  \"format\": \"dateOptionalTime\",\n                  \"index\": \"no\",\n                  \"type\": \"date\"\n                }\n              }\n            },\n            \"providerPrice\": {\n              \"properties\": {\n                \"amount\": {\n                  \"index\": \"no\",\n                  \"type\": \"long\"\n                },\n                \"currency\": {\n                  \"index\": \"no\",\n                  \"type\": \"string\"\n                }\n              }\n            },\n            \"outboundSegments\": {\n              \"properties\": {\n                \"carrier\": {\n                  \"index\": \"no\",\n                  \"type\": \"string\"\n                },\n                \"arrDate\": {\n                  \"format\": \"dateOptionalTime\",\n                  \"index\": \"no\",\n                  \"type\": \"date\"\n                },\n                \"stopOvers\": {\n                  \"index\": \"no\",\n                  \"type\": \"long\"\n                },\n                \"depGeoNodeId\": {\n                  \"index\": \"not_analyzed\",\n                  \"type\": \"long\"\n                },\n                \"arrGeoNodeId\": {\n                  \"type\": \"long\"\n                },\n                \"depDate\": {\n                  \"format\": \"dateOptionalTime\",\n                  \"index\": \"no\",\n                  \"type\": \"date\"\n                }\n              }\n            },\n            \"providers\": {\n              \"index\": \"no\",\n              \"type\": \"string\"\n            }\n          }\n        },\n        \"interface\": {\n          \"index\": \"not_analyzed\",\n          \"type\": \"string\"\n        },\n        \"arrivalDate\": {\n          \"format\": \"dateOptionalTime\",\n          \"type\": \"date\"\n        },\n        \"itineraryDestination\": {\n          \"type\": \"long\"\n        },\n        \"datesKey\": {\n          \"index\": \"not_analyzed\",\n          \"type\": \"string\"\n        },\n        \"isMktPortalChangingPrice\": {\n          \"type\": \"boolean\"\n        },\n        \"numPassengers\": {\n          \"type\": \"long\"\n        },\n        \"departureDate\": {\n          \"format\": \"dateOptionalTime\",\n          \"type\": \"date\"\n        },\n        \"id\": {\n          \"index\": \"no\",\n          \"type\": \"string\"\n        },\n        \"isResident\": {\n          \"type\": \"boolean\"\n        },\n        \"itineraryOrigin\": {\n          \"type\": \"long\"\n        },\n        \"timestamp\": {\n          \"format\": \"dateOptionalTime\",\n          \"index\": \"no\",\n          \"type\": \"date\"\n        }\n      }\n    }\n  },\n  \"aliases\": {}\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{es_url}}/_template/template_calendar_4",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_template",
+						"template_calendar_4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Open Index",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"order\": 0,\n  \"template\": \"odigeo_4_*\",\n  \"settings\": {\n    \"index.number_of_replicas\": \"1\",\n    \"index.number_of_shards\": \"2\",\n      \"index.refresh_interval\": \"30s\"\n  },\n  \"mappings\": {\n    \"calendarsearch\": {\n      \"_id\": {\n        \"path\": \"id\",\n        \"index\": \"not_analyzed\"\n      },\n      \"_timestamp\": {\n        \"path\": \"timestamp\",\n        \"enabled\": true\n      },\n      \"_all\": {\n        \"enabled\": false\n      },\n      \"properties\": {\n        \"website\": {\n          \"index\": \"not_analyzed\",\n          \"type\": \"string\"\n        },\n        \"triptype\": {\n          \"index\": \"not_analyzed\",\n          \"type\": \"string\"\n        },\n        \"origin\": {\n          \"type\": \"long\"\n        },\n        \"destination\": {\n          \"type\": \"long\"\n        },\n        \"mktPortal\": {\n          \"index\": \"not_analyzed\",\n          \"type\": \"string\"\n        },\n        \"calendarSearchFareItineraryResultDTOs\": {\n          \"type\": \"nested\",\n          \"properties\": {\n            \"apparentPrices\": {\n              \"properties\": {\n                \"appartentPrice\": {\n                  \"properties\": {\n                    \"amount\": {\n                      \"index\": \"no\",\n                      \"type\": \"long\"\n                    },\n                    \"currency\": {\n                      \"index\": \"no\",\n                      \"type\": \"string\"\n                    }\n                  }\n                },\n                \"apparentPrice\": {\n                  \"properties\": {\n                    \"amount\": {\n                      \"index\": \"no\",\n                      \"type\": \"double\"\n                    },\n                    \"currency\": {\n                      \"index\": \"no\",\n                      \"type\": \"string\"\n                    }\n                  }\n                },\n                \"apparentPriceCriteria\": {\n                  \"index\": \"not_analyzed\",\n                  \"type\": \"string\"\n                }\n              }\n            },\n            \"fee\": {\n              \"properties\": {\n                \"amount\": {\n                  \"index\": \"no\",\n                  \"type\": \"long\"\n                },\n                \"currency\": {\n                  \"index\": \"no\",\n                  \"type\": \"string\"\n                }\n              }\n            },\n            \"inboundSegments\": {\n              \"properties\": {\n                \"carrier\": {\n                  \"index\": \"no\",\n                  \"type\": \"string\"\n                },\n                \"arrDate\": {\n                  \"format\": \"dateOptionalTime\",\n                  \"index\": \"no\",\n                  \"type\": \"date\"\n                },\n                \"stopOvers\": {\n                  \"index\": \"no\",\n                  \"type\": \"long\"\n                },\n                \"depGeoNodeId\": {\n                  \"type\": \"long\"\n                },\n                \"arrGeoNodeId\": {\n                  \"index\": \"not_analyzed\",\n                  \"type\": \"long\"\n                },\n                \"depDate\": {\n                  \"format\": \"dateOptionalTime\",\n                  \"index\": \"no\",\n                  \"type\": \"date\"\n                }\n              }\n            },\n            \"providerPrice\": {\n              \"properties\": {\n                \"amount\": {\n                  \"index\": \"no\",\n                  \"type\": \"long\"\n                },\n                \"currency\": {\n                  \"index\": \"no\",\n                  \"type\": \"string\"\n                }\n              }\n            },\n            \"outboundSegments\": {\n              \"properties\": {\n                \"carrier\": {\n                  \"index\": \"no\",\n                  \"type\": \"string\"\n                },\n                \"arrDate\": {\n                  \"format\": \"dateOptionalTime\",\n                  \"index\": \"no\",\n                  \"type\": \"date\"\n                },\n                \"stopOvers\": {\n                  \"index\": \"no\",\n                  \"type\": \"long\"\n                },\n                \"depGeoNodeId\": {\n                  \"index\": \"not_analyzed\",\n                  \"type\": \"long\"\n                },\n                \"arrGeoNodeId\": {\n                  \"type\": \"long\"\n                },\n                \"depDate\": {\n                  \"format\": \"dateOptionalTime\",\n                  \"index\": \"no\",\n                  \"type\": \"date\"\n                }\n              }\n            },\n            \"providers\": {\n              \"index\": \"no\",\n              \"type\": \"string\"\n            }\n          }\n        },\n        \"interface\": {\n          \"index\": \"not_analyzed\",\n          \"type\": \"string\"\n        },\n        \"arrivalDate\": {\n          \"format\": \"dateOptionalTime\",\n          \"type\": \"date\"\n        },\n        \"itineraryDestination\": {\n          \"type\": \"long\"\n        },\n        \"datesKey\": {\n          \"index\": \"not_analyzed\",\n          \"type\": \"string\"\n        },\n        \"isMktPortalChangingPrice\": {\n          \"type\": \"boolean\"\n        },\n        \"numPassengers\": {\n          \"type\": \"long\"\n        },\n        \"departureDate\": {\n          \"format\": \"dateOptionalTime\",\n          \"type\": \"date\"\n        },\n        \"id\": {\n          \"index\": \"no\",\n          \"type\": \"string\"\n        },\n        \"isResident\": {\n          \"type\": \"boolean\"\n        },\n        \"itineraryOrigin\": {\n          \"type\": \"long\"\n        },\n        \"timestamp\": {\n          \"format\": \"dateOptionalTime\",\n          \"index\": \"no\",\n          \"type\": \"date\"\n        }\n      }\n    }\n  },\n  \"aliases\": {}\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{es_url}}/app-travelfusion-gateway-2019.07.18/_open",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"app-travelfusion-gateway-2019.07.18",
+						"_open"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Add repository",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"type\": \"gcs\",\n \"settings\":\n {\n  \"bucket\": \"elasticsearch-snapshots-{{env_bucket}}\",\n  \"base_path\": \"sslp-dynpack\",\n  \"max_restore_bytes_per_sec\": \"1gb\",\n  \"max_snapshot_bytes_per_sec\": \"150mb\",\n  \"client\": \"{{env_bucket}}\"\n }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{es_url}}/_snapshot/gcs",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_snapshot",
+						"gcs"
+					]
+				},
+				"description": "Creates a repository needed for a snapshot"
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Get Repositories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/_cat/repositories?format=json&v",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_cat",
+						"repositories"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "v",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Create snapshot",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4ea84f5a-4b8f-474d-bf48-99ecf60e4505",
+						"exec": [
+							"const moment = require('moment');",
+							"pm.globals.set(\"timestamp\", moment().format(\"YYYY-MM-DD\"));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{es_url}}/_snapshot/gcs/{{timestamp}}",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_snapshot",
+						"gcs",
+						"{{timestamp}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Snapshot status",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b044330b-24c5-4f13-9855-401f57d3a3e2",
+						"exec": [
+							"const moment = require('moment');",
+							"pm.globals.set(\"timestamp\", moment().format(\"YYYY-MM-DD\"));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/_snapshot/gcs/sslp-flights-destination-20200310161723",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_snapshot",
+						"gcs",
+						"sslp-flights-destination-20200310161723"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Get Snapshots Mesos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{es_url}}/_snapshot/bcn1-elasticsearch-p04/migration-3994?pretty",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_snapshot",
+						"bcn1-elasticsearch-p04",
+						"migration-3994"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Restore snapshot",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c357b60a-9ded-422d-9a22-ec242e517cbf",
+						"exec": [
+							"const moment = require('moment');",
+							"pm.globals.set(\"timestamp\", moment().format(\"YYYY-MM-DD\"));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"ignore_unavailable\": true,\n  \"partial\": true,\n  \"include_global_state\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{es_url}}/_snapshot/gcs/sslp-dynpack-20200311071040/_restore",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_snapshot",
+						"gcs",
+						"sslp-dynpack-20200311071040",
+						"_restore"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElasticSearch API Restore list of indexes from snapshot",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "098bf16f-1755-4bab-a028-a6968e5065d4",
+						"exec": [
+							"const moment = require('moment');",
+							"pm.globals.set(\"timestamp\", moment().format(\"YYYY-MM-DD\"));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"indices\": \"sslpfd_justo_test\",\n  \"ignore_unavailable\": true,\n  \"include_global_state\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{es_url}}/_snapshot/gcs/sslp-flights-destination-20200310161723/_restore",
+					"host": [
+						"{{es_url}}"
+					],
+					"path": [
+						"_snapshot",
+						"gcs",
+						"sslp-flights-destination-20200310161723",
+						"_restore"
+					]
+				},
+				"description": "command to restore a list of indexes from one snapshot"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,437 @@
+{
+	"info": {
+		"_postman_id": "6d43cb2f-a0d8-477a-908f-d0a92c0d6149",
+		"name": "k8s",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET /openapi/v2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{APISERVER}}/openapi/v2",
+					"host": [
+						"{{APISERVER}}"
+					],
+					"path": [
+						"openapi",
+						"v2"
+					]
+				},
+				"description": "first request"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /version",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{APISERVER}}/version",
+					"host": [
+						"{{APISERVER}}"
+					],
+					"path": [
+						"version"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /metrics",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{APISERVER}}/metrics",
+					"host": [
+						"{{APISERVER}}"
+					],
+					"path": [
+						"metrics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /api",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{APISERVER}}/api",
+					"host": [
+						"{{APISERVER}}"
+					],
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /apis/apiextensions.k8s.io",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{APISERVER}}/apis/apiextensions.k8s.io",
+					"host": [
+						"{{APISERVER}}"
+					],
+					"path": [
+						"apis",
+						"apiextensions.k8s.io"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /livez",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{APISERVER}}/livez",
+					"host": [
+						"{{APISERVER}}"
+					],
+					"path": [
+						"livez"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /livez/ping",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{APISERVER}}/livez/ping",
+					"host": [
+						"{{APISERVER}}"
+					],
+					"path": [
+						"livez",
+						"ping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /healthz",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{APISERVER}}/healthz",
+					"host": [
+						"{{APISERVER}}"
+					],
+					"path": [
+						"healthz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /healthz/log",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{APISERVER}}/healthz/log",
+					"host": [
+						"{{APISERVER}}"
+					],
+					"path": [
+						"healthz",
+						"log"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /readyz/informer-sync",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{APISERVER}}/readyz/informer-sync",
+					"host": [
+						"{{APISERVER}}"
+					],
+					"path": [
+						"readyz",
+						"informer-sync"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /api/v1/namespaces/default/pods/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{APISERVER}}/api/v1/namespaces/default/pods/",
+					"host": [
+						"{{APISERVER}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"namespaces",
+						"default",
+						"pods",
+						""
+					]
+				},
+				"description": "first request"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /api/v1/namespaces/default/pods?watch=1&resourceVersion=3143",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{APISERVER}}/api/v1/namespaces/default/pods?watch=1&resourceVersion=3142",
+					"host": [
+						"{{APISERVER}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"namespaces",
+						"default",
+						"pods"
+					],
+					"query": [
+						{
+							"key": "watch",
+							"value": "1"
+						},
+						{
+							"key": "resourceVersion",
+							"value": "3142"
+						}
+					]
+				},
+				"description": "first request"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /api/v1/namespaces/test/pods?watch=1&resourceVersion=10245&allowWatchBookmarks=true",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{APISERVER}}/api/v1/namespaces/default/pods?watch=1&resourceVersion=10245&allowWatchBookmarks=true",
+					"host": [
+						"{{APISERVER}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"namespaces",
+						"default",
+						"pods"
+					],
+					"query": [
+						{
+							"key": "watch",
+							"value": "1"
+						},
+						{
+							"key": "resourceVersion",
+							"value": "10245"
+						},
+						{
+							"key": "allowWatchBookmarks",
+							"value": "true"
+						}
+					]
+				},
+				"description": "first request"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /kubectl/swagger/swagger.yml",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{APISERVER}}/kubectl/swagger/swagger.yml",
+					"host": [
+						"{{APISERVER}}"
+					],
+					"path": [
+						"kubectl",
+						"swagger",
+						"swagger.yml"
+					]
+				},
+				"description": "first request"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

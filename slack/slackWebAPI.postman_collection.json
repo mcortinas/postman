@@ -1,0 +1,3524 @@
+{
+	"info": {
+		"_postman_id": "e3fb6143-9c57-4e67-83d2-b04a263926d8",
+		"name": "Slack Web API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "channels",
+			"item": [
+				{
+					"name": "channels.archive",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/channels.archive?token={{token}}&channel=C1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"channels.archive"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "C1234567890"
+								}
+							]
+						},
+						"description": "This method archives a pubic channel.\n\n\n| Argument | Example             | Required | Description                                    |\n|----------|---------------------|----------|------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope:identify) |\n| channel  | C1234567890         | Required | Channel to archive                             |"
+					},
+					"response": []
+				},
+				{
+					"name": "channels.create",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/channels.create?token={{token}}&name=mychannel",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"channels.create"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "name",
+									"value": "mychannel"
+								}
+							]
+						},
+						"description": "This method is used to create a channel.\n\n| Argument | Example             | Required | Description                                          |\n|----------|---------------------|----------|------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope:channels:write) |\n| name     | mychannel           | Required | Name of channel to create                            |"
+					},
+					"response": []
+				},
+				{
+					"name": "channels.history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/channels.history?token={{token}}&channel=C1234567890&latest=1234567890.123456&oldest=1234567890.123456&inclusive=1&count=100&unreads=1",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"channels.history"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "C1234567890"
+								},
+								{
+									"key": "latest",
+									"value": "1234567890.123456"
+								},
+								{
+									"key": "oldest",
+									"value": "1234567890.123456"
+								},
+								{
+									"key": "inclusive",
+									"value": "1"
+								},
+								{
+									"key": "count",
+									"value": "100"
+								},
+								{
+									"key": "unreads",
+									"value": "1"
+								}
+							]
+						},
+						"description": "This method returns a portion of message events from the specified channel.\n\nTo read the entire history for a channel, call the method with no latest or oldest arguments, and then continue paging using the instructions below.\n\n| Argument  | Example             | Required              | Description                                                  |\n|-----------|---------------------|-----------------------|--------------------------------------------------------------|\n| token     | xxxx-xxxxxxxxx-xxxx | Required              | Authentication token (Requires scope:channels:history)       |\n| channel   | C1234567890         | Required              | Channel to fetch history for.                                |\n| latest    | 1234567890          | Optional, default=now | End of time range of messages to include in results.         |\n| oldest    | 1234567890          | Optional, default=0   | Start of time range of messages to include in results.       |\n| inclusive | 1                   | Optional, default=0   | Include messages with latest or oldest timestamp in results. |\n| count     | 100                 | Optional, default=100 | Number of messages to return, between 1 and 1000.            |\n| unreads   | 1                   | Optional, default=0   | Includeunread_count_display in the output?                   |"
+					},
+					"response": []
+				},
+				{
+					"name": "channels.info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/channels.info?token={{token}}&channel=C1234567890&latest=1234567890.123456&oldest=1234567890.123456&inclusive=1&count=100&unreads=1",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"channels.info"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "C1234567890"
+								},
+								{
+									"key": "latest",
+									"value": "1234567890.123456"
+								},
+								{
+									"key": "oldest",
+									"value": "1234567890.123456"
+								},
+								{
+									"key": "inclusive",
+									"value": "1"
+								},
+								{
+									"key": "count",
+									"value": "100"
+								},
+								{
+									"key": "unreads",
+									"value": "1"
+								}
+							]
+						},
+						"description": "This method returns information about a team channel.\n\n\n| Argument  | Example             | Required              | Description                                                  |\n|-----------|---------------------|-----------------------|--------------------------------------------------------------|\n| token     | xxxx-xxxxxxxxx-xxxx | Required              | Authentication token (Requires scope: channels:read)         |\n| channel   | C1234567890         | Required              | Channel to get info on.                                      |\n"
+					},
+					"response": []
+				},
+				{
+					"name": "channels.invite",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/channels.invite?token={{token}}&channel=C1234567890&user=U1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"channels.invite"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "C1234567890"
+								},
+								{
+									"key": "user",
+									"value": "U1234567890"
+								}
+							]
+						},
+						"description": "This method is used to invite a user to a channel. The calling user must be a member of the channel.\n\n| Argument | Example             | Required | Description                                           |\n|----------|---------------------|----------|-------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: channels:write) |\n| channel  | C1234567890         | Required | Channel to invite user to.                            |\n| user     | U1234567890         | Required | User to invite to channel.                            |"
+					},
+					"response": []
+				},
+				{
+					"name": "channels.join",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/channels.join?token={{token}}&name=mychannel",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"channels.join"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "name",
+									"value": "mychannel"
+								}
+							]
+						},
+						"description": "This method is used to join a channel. If the channel does not exist, it is created.\n\n| Argument | Example             | Required | Description                                          |\n|----------|---------------------|----------|------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope:channels:write) |\n| name     | mychannel           | Required | Name of channel to join                              |"
+					},
+					"response": []
+				},
+				{
+					"name": "channels.kick",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/channels.kick?token={{token}}&channel=C1234567890&user=U1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"channels.kick"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "C1234567890"
+								},
+								{
+									"key": "user",
+									"value": "U1234567890"
+								}
+							]
+						},
+						"description": "This method allows a user to remove another member from a team channel.\n\n| Argument | Example             | Required | Description                                          |\n|----------|---------------------|----------|------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope:channels:write) |\n| channel  | C1234567890         | Required | Channel to remove user from.                         |\n| user     | U1234567890         | Required | User to remove from channel.                         |"
+					},
+					"response": []
+				},
+				{
+					"name": "channels.leave",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/channels.leave?token={{token}}&channel=C1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"channels.leave"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "C1234567890"
+								}
+							]
+						},
+						"description": "This method is used to leave a channel.\n\n\n| Argument | Example             | Required | Description                                          |\n|----------|---------------------|----------|------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope:channels:write) |\n| channel  | C1234567890         | Required | Channel to leave                                     |"
+					},
+					"response": []
+				},
+				{
+					"name": "channels.list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/channels.list?token={{token}}&exclude_archived=0",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"channels.list"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "exclude_archived",
+									"value": "0"
+								}
+							]
+						},
+						"description": "This method returns a list of all channels in the team. This includes channels the caller is in, channels they are not currently in, and archived channels but does not include private channels. The number of (non-deactivated) members in each channel is also returned.\n\nTo retrieve a list of private channels, use groups.list\n\n| Argument         | Example             | Required            | Description                                         |\n|------------------|---------------------|---------------------|-----------------------------------------------------|\n| token            | xxxx-xxxxxxxxx-xxxx | Required            | Authentication token (Requires scope:channels:read) |\n| exclude_archived | 1                   | Optional, default=0 | Don't return archived channels.                     |                   |"
+					},
+					"response": []
+				},
+				{
+					"name": "channels.mark",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/channels.mark?token={{token}}&channel=C1234567890&ts=1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"channels.mark"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "C1234567890"
+								},
+								{
+									"key": "ts",
+									"value": "1234567890"
+								}
+							]
+						},
+						"description": "This method moves the read cursor in a channel.\n\n| Argument | Example             | Required | Description                                           |\n|----------|---------------------|----------|-------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: channels:write) |\n| channel  | C1234567890         | Required | Channel to set reading cursor in.                     |\n| ts       | 1234567890          | Required | Timestamp of the most recently seen message.          |"
+					},
+					"response": []
+				},
+				{
+					"name": "channels.rename",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/channels.rename?token={{token}}&channel=C1234567890&name=channel-name",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"channels.rename"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "C1234567890"
+								},
+								{
+									"key": "name",
+									"value": "channel-name"
+								}
+							]
+						},
+						"description": "This method renames a team channel.\n\nThe only people who can rename a channel are team admins, or the person that originally created the channel. Others will receive a \"not_authorized\" error.\n\n| Argument | Example             | Required | Description                                          |\n|----------|---------------------|----------|------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope:channels:write) |\n| channel  | C1234567890         | Required | Channel to rename                                    |\n| name     |                     | Required | New name for channel.                                |"
+					},
+					"response": []
+				},
+				{
+					"name": "channels.setPurpose",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/channels.setPurpose?token={{token}}&channel=C1234567890&purpose=My Purpose",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"channels.setPurpose"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "C1234567890"
+								},
+								{
+									"key": "purpose",
+									"value": "My Purpose"
+								}
+							]
+						},
+						"description": "This method is used to change the purpose of a channel. The calling user must be a member of the channel.\n\n\n| Argument | Example             | Required | Description                                          |\n|----------|---------------------|----------|------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope:channels:write) |\n| channel  | C1234567890         | Required | Channel to set the purpose of                        |\n| purpose  | My Purpose          | Required | The new purpose                                      |"
+					},
+					"response": []
+				},
+				{
+					"name": "channels.setTopic",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/channels.setTopic?token={{token}}&channel=C1234567890&topic=The New Topic",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"channels.setTopic"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "C1234567890"
+								},
+								{
+									"key": "topic",
+									"value": "The New Topic"
+								}
+							]
+						},
+						"description": "This method is used to change the topic of a channel. The calling user must be a member of the channel.\n\n\n| Argument | Example             | Required | Description                                          |\n|----------|---------------------|----------|------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope:channels:write) |\n| channel  | C1234567890         | Required | Channel to set the topic of                          |\n| topic    | My Topic            | Required | The new topic                                        |"
+					},
+					"response": []
+				},
+				{
+					"name": "channels.unarchive",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/channels.unarchive?token={{token}}&channel=C1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"channels.unarchive"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "C1234567890"
+								}
+							]
+						},
+						"description": "This method unarchives a channel. The calling user is added to the channel.\n\n\n| Argument | Example             | Required | Description                                           |\n|----------|---------------------|----------|-------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: channels:write) |\n| channel  | C1234567890         | Required | Channel to unarchive                                  |"
+					},
+					"response": []
+				}
+			],
+			"description": "Get info on your team's Slack channels, create or archive channels, invite users, set the topic and purpose, and mark a channel as read.",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "api.test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var responseJSON;",
+									"try {",
+									"    tests[\"Body contains headers\"] = responseBody.has(\"headers\");",
+									"    responseJSON = JSON.parse(responseBody);",
+									"    tests[\"Header contains host\"] = \"host\" in responseJSON.headers;",
+									"    tests[\"Header contains test parameter sent as part of request header\"] = \"my-sample-header\" in responseJSON.headers;",
+									"}",
+									"catch (e) { }",
+									"",
+									"",
+									"",
+									""
+								],
+								"id": "7e5a249e-668c-493f-b98a-20a9daf9b577"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/api.test?error=my_error&foo=bar",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"api.test"
+							],
+							"query": [
+								{
+									"key": "error",
+									"value": "my_error"
+								},
+								{
+									"key": "foo",
+									"value": "bar"
+								}
+							]
+						},
+						"description": "This method helps you test your calling code.\n\n\n| Argument | Example  | Required | Description                |\n|----------|----------|----------|----------------------------|\n| error    | my_error | Optional | Error response to return   |\n| foo      | bar      | Optional | example property to return |"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "auth.test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/auth.test?token={{token}}",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"auth.test"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						},
+						"description": "This method checks authentication and tells you who you are.\n\n| Argument | Example             | Required | Description                                    |\n|----------|---------------------|----------|------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope:identify) |"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "chat.delete",
+			"item": [
+				{
+					"name": "chat.delete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/chat.delete?token={{token}}&ts=1405894322.002768&channel=C1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"chat.delete"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "ts",
+									"value": "1405894322.002768"
+								},
+								{
+									"key": "channel",
+									"value": "C1234567890"
+								}
+							]
+						},
+						"description": "This method deletes a message from a channel.\n\n| Argument | Example             | Required | Description                                            |\n|----------|---------------------|----------|--------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: chat:write:user) |\n| ts       | 1405894322.002768   | Required | Timestamp of the message to be deleted.                |\n| channel  | C1234567890         | Required | Channel containing the message to be deleted.          |"
+					},
+					"response": []
+				},
+				{
+					"name": "chat.postMessage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/chat.postMessage?token={{token}}&channel=C1234567890&text=Hello worlo&parse=full&link_names=1&attachments=[{\"pretext\": \"pre-hello\", \"text\": \"text-world\"}]&unfurl_links=true&unfurl_media=false&username=My Bot&as_user=true&icon_url=http://lorempixel.com/48/48&icon_emoji=:chart_with_upwards_trend:",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"chat.postMessage"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "C1234567890"
+								},
+								{
+									"key": "text",
+									"value": "Hello worlo"
+								},
+								{
+									"key": "parse",
+									"value": "full"
+								},
+								{
+									"key": "link_names",
+									"value": "1"
+								},
+								{
+									"key": "attachments",
+									"value": "[{\"pretext\": \"pre-hello\", \"text\": \"text-world\"}]"
+								},
+								{
+									"key": "unfurl_links",
+									"value": "true"
+								},
+								{
+									"key": "unfurl_media",
+									"value": "false"
+								},
+								{
+									"key": "username",
+									"value": "My Bot"
+								},
+								{
+									"key": "as_user",
+									"value": "true"
+								},
+								{
+									"key": "icon_url",
+									"value": "http://lorempixel.com/48/48"
+								},
+								{
+									"key": "icon_emoji",
+									"value": ":chart_with_upwards_trend:"
+								}
+							]
+						},
+						"description": "This method posts a message to a public channel, private group, or IM channel.\n\n\n| Argument     | Example                                          | Required | Description                                                                                                                             |\n|--------------|--------------------------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------|\n| token        | xxxx-xxxxxxxxx-xxxx                              | Required | Authentication token (Requires scope:chat:write:bot orchat:write:user)                                                                  |\n| channel      | C1234567890                                      | Required | Channel, private group, or IM channel to send message to. Can be an encoded ID, or a name.                                              |\n| text         | Hello world                                      | Required | Text of the message to send.                                                                                                            |\n| parse        | full                                             | Optional | Change how messages are treated. Defaults tonone.                                                                                       |\n| link_names   | 1                                                | Optional | Find and link channel names and usernames.                                                                                              |\n| attachments  | [{\"pretext\": \"pre-hello\", \"text\": \"text-world\"}] | Optional | Structured message attachments.                                                                                                         |\n| unfurl_links | TRUE                                             | Optional | Pass true to enable unfurling of primarily text-based content.                                                                          |\n| unfurl_media | FALSE                                            | Optional | Pass false to disable unfurling of media content.                                                                                       |\n| username     | My Bot                                           | Optional | Set your bot's user name. Must be used in conjunction withas_user set to false, otherwise ignored.                                      |\n| as_user      | TRUE                                             | Optional | Pass true to post the message as the authed user, instead of as a bot. Defaults to false.                                               |\n| icon_url     | http://lorempixel.com/48/48                      | Optional | URL to an image to use as the icon for this message. Must be used in conjunction withas_user set to false, otherwise ignored.           |\n| icon_emoji   | :chart_with_upwards_trend:                       | Optional | emoji to use as the icon for this message. Overrides icon_url. Must be used in conjunction withas_user set to false, otherwise ignored. |"
+					},
+					"response": []
+				},
+				{
+					"name": "chat.update",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/chat.update?token={{token}}&ts=C1234567890&channel=C1234567890&text=Hello world\t&attachments=[{\"pretext\": \"pre-hello\", \"text\": \"text-world\"}]&parse=none&link_names=1&as_user=true",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"chat.update"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "ts",
+									"value": "C1234567890"
+								},
+								{
+									"key": "channel",
+									"value": "C1234567890"
+								},
+								{
+									"key": "text",
+									"value": "Hello world\t"
+								},
+								{
+									"key": "attachments",
+									"value": "[{\"pretext\": \"pre-hello\", \"text\": \"text-world\"}]"
+								},
+								{
+									"key": "parse",
+									"value": "none"
+								},
+								{
+									"key": "link_names",
+									"value": "1"
+								},
+								{
+									"key": "as_user",
+									"value": "true"
+								}
+							]
+						},
+						"description": "This method updates a message in a channel. Though related to chat.postMessage, some parameters of chat.update are handled differently.\n\n| Argument    | Example                                          | Required | Description                                                                                                                                                               |\n|-------------|--------------------------------------------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| token       | xxxx-xxxxxxxxx-xxxx                              | Required | Authentication token (Requires scope: chat:write:user)                                                                                                                    |\n| ts          | 1405894322                                       | Required | Timestamp of the message to be updated.                                                                                                                                   |\n| channel     | C1234567890                                      | Required | Channel containing the message to be updated.                                                                                                                             |\n| text        | Hello world                                      | Required | New text for the message, using thedefault formatting rules.                                                                                                              |\n| attachments | [{\"pretext\": \"pre-hello\", \"text\": \"text-world\"}] | Optional | Structured message attachments.                                                                                                                                           |\n| parse       | none                                             | Optional | Change how messages are treated. Defaults to client, unlikechat.postMessage. See below.                                                                                   |\n| link_names  | 1                                                | Optional | Find and link channel names and usernames. Defaults to none. This parameter should be used in conjunction with parse. To setlink_names to 1, specify a parsemode of full. |\n| as_user     | TRUE                                             | Optional | Pass true to update the message as the authed user. Bot users in this context are considered authed users.                                                                |"
+					},
+					"response": []
+				}
+			],
+			"description": "Post chat messages to Slack.",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "dnd",
+			"item": [
+				{
+					"name": "dnd.endDnd",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/dnd.endDnd?token={{token}}",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"dnd.endDnd"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						},
+						"description": "Ends the user's currently scheduled Do Not Disturb session immediately.\n\n\n| Argument | Example             | Required | Description                                      |\n|----------|---------------------|----------|--------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: dnd:write) |"
+					},
+					"response": []
+				},
+				{
+					"name": "dnd.endSnooze",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/dnd.endSnooze?token={{token}}",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"dnd.endSnooze"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						},
+						"description": "Ends the current user's snooze mode immediately.\n\n\n\n| Argument | Example             | Required | Description                                      |\n|----------|---------------------|----------|--------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: dnd:write) |"
+					},
+					"response": []
+				},
+				{
+					"name": "dnd.info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/dnd.info?token={{token}}&user=U1234",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"dnd.info"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "user",
+									"value": "U1234"
+								}
+							]
+						},
+						"description": "Provides information about a user's current Do Not Disturb settings.\n\n\n\n| Argument | Example             | Required | Description                                         |\n|----------|---------------------|----------|-----------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: dnd:read)     |\n| user     | U1234               | Optional | User to fetch status for (defaults to current user) |"
+					},
+					"response": []
+				},
+				{
+					"name": "dnd.setSnooze",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/dnd.setSnooze?token={{token}}&num_minutes=60",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"dnd.setSnooze"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "num_minutes",
+									"value": "60"
+								}
+							]
+						},
+						"description": "Adjusts the snooze duration for a user's Do Not Disturb settings. If a snooze session is not already active for the user, invoking this method will begin one for the specified duration.\n\n\n\n| Argument    | Example             | Required | Description                                      |\n|-------------|---------------------|----------|--------------------------------------------------|\n| token       | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: dnd:write) |\n| num_minutes | 60                  | Required | Number of minutes, from now, to snooze until.    |"
+					},
+					"response": []
+				},
+				{
+					"name": "dnd.teamInfo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/dnd.teamInfo?token={{token}}&users=U1234,U4567",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"dnd.teamInfo"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "users",
+									"value": "U1234,U4567"
+								}
+							]
+						},
+						"description": "Provides information about the current Do Not Disturb settings for users of a Slack team.\n\n\n\n| Argument | Example             | Required | Description                                                      |\n|----------|---------------------|----------|------------------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: dnd:read)                  |\n| users    | U1234,U4567         | Optional | Comma-separated list of users to fetch Do Not Disturb status for |"
+					},
+					"response": []
+				}
+			],
+			"description": "Adjust and view Do Not Disturb settings for team members",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "emoji",
+			"item": [
+				{
+					"name": "emoji.list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/dnd.info?token={{token}}",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"dnd.info"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						},
+						"description": "This method lists the custom emoji for a team.\n\n\n| Argument | Example             | Required | Description                                       |\n|----------|---------------------|----------|---------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: emoji:read) |"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "files.comments",
+			"item": [
+				{
+					"name": "files.comments.add",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/files.comments.add?token={{token}}&file=F1234567890&comment=Everyone should take a moment to read this file.\t",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"files.comments.add"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "file",
+									"value": "F1234567890"
+								},
+								{
+									"key": "comment",
+									"value": "Everyone should take a moment to read this file.\t"
+								}
+							]
+						},
+						"description": "Add a comment to an existing file.\n\n\n| Argument | Example                                          | Required | Description                                             |\n|----------|--------------------------------------------------|----------|---------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx                              | Required | Authentication token (Requires scope: files:write:user) |\n| file     | F1234567890                                      | Required | File to add a comment to.                               |\n| comment  | Everyone should take a moment to read this file. | Required | Text of the comment to add.                             |"
+					},
+					"response": []
+				},
+				{
+					"name": "files.comments.delete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/files.comments.delete?token={{token}}&file=F1234567890&id=Fc1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"files.comments.delete"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "file",
+									"value": "F1234567890"
+								},
+								{
+									"key": "id",
+									"value": "Fc1234567890"
+								}
+							]
+						},
+						"description": "Delete an existing comment on a file. Only the original author of the comment or a team administrator may delete a file comment.\n\n\n| Argument | Example             | Required | Description                                             |\n|----------|---------------------|----------|---------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: files:write:user) |\n| file     | F1234567890         | Required | File to delete a comment from.                          |\n| id       | Fc1234567890        | Required | The comment to delete.                                  |"
+					},
+					"response": []
+				},
+				{
+					"name": "files.comments.edit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/files.comments.edit?token={{token}}&file=F1234567890&id=Fc1234567890&comment=Everyone should take a moment to read this file, seriously.\t",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"files.comments.edit"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "file",
+									"value": "F1234567890"
+								},
+								{
+									"key": "id",
+									"value": "Fc1234567890"
+								},
+								{
+									"key": "comment",
+									"value": "Everyone should take a moment to read this file, seriously.\t"
+								}
+							]
+						},
+						"description": "Edit an existing comment on a file. Only the user who created a comment may make edits. Teams may configure a limited time window during which file comment edits are allowed.\n\n| Argument | Example                                                     | Required | Description                                             |\n|----------|-------------------------------------------------------------|----------|---------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx                                         | Required | Authentication token (Requires scope: files:write:user) |\n| file     | F1234567890                                                 | Required | File containing the comment to edit.                    |\n| id       | Fc1234567890                                                | Required | The comment to edit.                                    |\n| comment  | Everyone should take a moment to read this file, seriously. | Required | Text of the comment to edit.                            |"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "files",
+			"item": [
+				{
+					"name": "files.delete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/files.delete?token={{token}}&file=F1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"files.delete"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "file",
+									"value": "F1234567890"
+								}
+							]
+						},
+						"description": "This method deletes a file from your team.\n\n| Argument | Example             | Required | Description                                             |\n|----------|---------------------|----------|---------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: files:write:user) |\n| file     |                     | Required | ID of file to delete.                                   |"
+					},
+					"response": []
+				},
+				{
+					"name": "files.info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/files.info?token={{token}}&file=F1234567890&count=100&page=1",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"files.info"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "file",
+									"value": "F1234567890"
+								},
+								{
+									"key": "count",
+									"value": "100"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						},
+						"description": "This method returns information about a file in your team.\n\n| Argument | Example             | Required              | Description                                       |\n|----------|---------------------|-----------------------|---------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required              | Authentication token (Requires scope: files:read) |\n| file     | F2147483862         | Required              | Specify a file by providing its ID.               |\n| count    | 20                  | Optional, default=100 | Number of items to return per page.               |\n| page     | 2                   | Optional, default=1   | Page number of results to return.                 |"
+					},
+					"response": []
+				},
+				{
+					"name": "files.list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/files.list?token={{token}}&user=U1234567890&channel=C1234567890&ts_from=123456789&ts_to=123456789&types=images&count=100&page=1",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"files.list"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "user",
+									"value": "U1234567890"
+								},
+								{
+									"key": "channel",
+									"value": "C1234567890"
+								},
+								{
+									"key": "ts_from",
+									"value": "123456789"
+								},
+								{
+									"key": "ts_to",
+									"value": "123456789"
+								},
+								{
+									"key": "types",
+									"value": "images"
+								},
+								{
+									"key": "count",
+									"value": "100"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						},
+						"description": "This method returns a list of files within the team. It can be filtered and sliced in various ways.\n| Argument | Example             | Required              | Description                                                                                                                                                                                                                                                                             |\n|----------|---------------------|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required              | Authentication token (Requires scope: files:read)                                                                                                                                                                                                                                       |\n| user     | U1234567890         | Optional              | Filter files created by a single user.                                                                                                                                                                                                                                                  |\n| channel  | C1234567890         | Optional              | Filter files appearing in a specific channel, indicated by its ID.                                                                                                                                                                                                                      |\n| ts_from  | 123456789           | Optional, default=0   | Filter files created after this timestamp (inclusive).                                                                                                                                                                                                                                  |\n| ts_to    | 123456789           | Optional, default=now | Filter files created before this timestamp (inclusive).                                                                                                                                                                                                                                 |\n| types    | images              | Optional, default=all | Filter files by type:all - All files posts - Posts snippets - Snippets images - Image files gdocs - Google docs zips - Zip files pdfs - PDF filesYou can pass multiple values in the types argument, liketypes=posts,snippets.The default value is all, which does not filter the list. |\n| count    | 20                  | Optional, default=100 | Number of items to return per page.                                                                                                                                                                                                                                                     |\n| page     | 2                   | Optional, default=1   | Page number of results to return.                                                                                                                                                                                                                                                       |"
+					},
+					"response": []
+				},
+				{
+					"name": "files.revokePublicUrl",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/files.revokePublicUrl?token={{token}}&file=F1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"files.revokePublicUrl"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "file",
+									"value": "F1234567890"
+								}
+							]
+						},
+						"description": "This method disables public/external sharing for a file.\n\n\n| Argument | Example             | Required | Description                                             |\n|----------|---------------------|----------|---------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: files:write:user) |\n| file     | F1234567890         | Required | File to revoke                                          |"
+					},
+					"response": []
+				},
+				{
+					"name": "files.sharedPublicUrl",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/files.sharedPublicUrl?token={{token}}&file=F1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"files.sharedPublicUrl"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "file",
+									"value": "F1234567890"
+								}
+							]
+						},
+						"description": "This method enables public/external sharing for a file.\n\n\n\n\n| Argument | Example             | Required | Description                                             |\n|----------|---------------------|----------|---------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: files:write:user) |\n| file     | F1234567890         | Required | File to revoke                                          |"
+					},
+					"response": []
+				},
+				{
+					"name": "files.upload",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/files.upload?token={{token}}&file=&content&filetype=php&filename=foo.txt&title=My File&initial_comment=Best!\t&channels=C1234567890\t",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"files.upload"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "file",
+									"value": ""
+								},
+								{
+									"key": "content",
+									"value": null
+								},
+								{
+									"key": "filetype",
+									"value": "php"
+								},
+								{
+									"key": "filename",
+									"value": "foo.txt"
+								},
+								{
+									"key": "title",
+									"value": "My File"
+								},
+								{
+									"key": "initial_comment",
+									"value": "Best!\t"
+								},
+								{
+									"key": "channels",
+									"value": "C1234567890\t"
+								}
+							]
+						},
+						"description": "This method allows you to create or upload an existing file.\n| Argument        | Example             | Required | Description                                                                 |\n|-----------------|---------------------|----------|-----------------------------------------------------------------------------|\n| token           | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: files:write:user)                     |\n| file            | ...                 | Optional | File contents via multipart/form-data.                                      |\n| content         | ...                 | Optional | File contents via a POST var.                                               |\n| filetype        | php                 | Optional | Slack-internal file type identifier.                                        |\n| filename        | foo.txt             | Required | Filename of file.                                                           |\n| title           | My File             | Optional | Title of file.                                                              |\n| initial_comment | Best!               | Optional | Initial comment to add to file.                                             |\n| channels        | C1234567890         | Optional | Comma-separated list of channel names or IDs where the file will be shared. |"
+					},
+					"response": []
+				}
+			],
+			"description": "Get info on files uploaded to Slack, upload new files to Slack.",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "groups",
+			"item": [
+				{
+					"name": "groups.archive",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/groups.archive?token={{token}}&channel=G1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"groups.archive"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "G1234567890"
+								}
+							]
+						},
+						"description": "This method archives a private channel.\n\n\n| Argument | Example             | Required | Description                                    |\n|----------|---------------------|----------|------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope:`groups:write`) |\n| channel  | G1234567890         | Required | Private channel to archive                             |"
+					},
+					"response": []
+				},
+				{
+					"name": "groups.close",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/groups.close?token={{token}}&channel=G1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"groups.close"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "G1234567890"
+								}
+							]
+						},
+						"description": "This method closes a private channel.\n\n\n\n| Argument | Example             | Required | Description                                    |\n|----------|---------------------|----------|------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope:`groups:write`) |\n| channel  | G1234567890         | Required | Private channel to close                             |"
+					},
+					"response": []
+				},
+				{
+					"name": "groups.create",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/groups.create?token={{token}}&name=mychannel",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"groups.create"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "name",
+									"value": "mychannel"
+								}
+							]
+						},
+						"description": "This method creates a private channel.\n\n| Argument | Example             | Required | Description                                          |\n|----------|---------------------|----------|------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope:`groups:write`) |\n| name     | mychannel           | Required | Name of private channel to create                            |"
+					},
+					"response": []
+				},
+				{
+					"name": "groups.createChild",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/groups.createChild?token={{token}}&channel=G1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"groups.createChild"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "G1234567890"
+								}
+							]
+						},
+						"description": "This method takes an existing private channel and performs the following steps:\n\nRenames the existing private channel (from \"example\" to \"example-archived\").\nArchives the existing private channel.\nCreates a new private channel with the name of the existing private channel.\nAdds all members of the existing private channel to the new private channel.\nThis is useful when inviting a new member to an existing private channel while hiding all previous chat history from them. In this scenario you can call `groups.createChild` followed by `groups.invite`.\n\nThe new private channel will have a special `parent_group` property pointing to the original archived private channel. This will only be returned for members of both private channels, so will not be visible to any newly invited members.\n\n| Argument | Example             | Required | Description                                          |\n|----------|---------------------|----------|------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope:`groups:write`) |\n| channel     | G1234567890           | Required | Private channel to clone and archive                           |"
+					},
+					"response": []
+				},
+				{
+					"name": "groups.history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/groups.history?token={{token}}&channel=G1234567890&latest=1234567890.123456&oldest=1234567890.123456&inclusive=1&count=100&unreads=1",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"groups.history"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "G1234567890"
+								},
+								{
+									"key": "latest",
+									"value": "1234567890.123456"
+								},
+								{
+									"key": "oldest",
+									"value": "1234567890.123456"
+								},
+								{
+									"key": "inclusive",
+									"value": "1"
+								},
+								{
+									"key": "count",
+									"value": "100"
+								},
+								{
+									"key": "unreads",
+									"value": "1"
+								}
+							]
+						},
+						"description": "This method returns a portion of messages/events from the specified private channel. To read the entire history for a private channel, call the method with no latest or oldest arguments, and then continue paging using the instructions below.\n\n| Argument  | Example             | Required              | Description                                                  |\n|-----------|---------------------|-----------------------|--------------------------------------------------------------|\n| token     | xxxx-xxxxxxxxx-xxxx | Required              | Authentication token (Requires scope:`groups:history`)       |\n| channel   | G1234567890         | Required              | Private channel to fetch history for.                                |\n| latest    | 1234567890          | Optional, default=now | End of time range of messages to include in results.         |\n| oldest    | 1234567890          | Optional, default=0   | Start of time range of messages to include in results.       |\n| inclusive | 1                   | Optional, default=0   | Include messages with latest or oldest timestamp in results. |\n| count     | 100                 | Optional, default=100 | Number of messages to return, between 1 and 1000.            |\n| unreads   | 1                   | Optional, default=0   | Includeunread_count_display in the output?                   |"
+					},
+					"response": []
+				},
+				{
+					"name": "groups.info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/groups.info?token={{token}}&channel=G1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"groups.info"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "G1234567890"
+								}
+							]
+						},
+						"description": "This method returns information about a private channel.\n\n\n| Argument  | Example             | Required              | Description                                                  |\n|-----------|---------------------|-----------------------|--------------------------------------------------------------|\n| token     | xxxx-xxxxxxxxx-xxxx | Required              | Authentication token (Requires scope: groups:read)         |\n| channel   | G1234567890         | Required              | Private channel to get info on.                                      |\n"
+					},
+					"response": []
+				},
+				{
+					"name": "groups.invite",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/groups.invite?token={{token}}&channel=G1234567890&user=U1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"groups.invite"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "G1234567890"
+								},
+								{
+									"key": "user",
+									"value": "U1234567890"
+								}
+							]
+						},
+						"description": "This method is used to invite a user to a private channel. The calling user must be a member of the private channel.\n\nTo invite a new member to a private channel without giving them access to the archives of the private channel, call the groups.createChild method before inviting.\n\n| Argument | Example             | Required | Description                                           |\n|----------|---------------------|----------|-------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: `groups:write`) |\n| channel  | G1234567890         | Required | Private hannel to invite user to.                            |\n| user     | U1234567890         | Required | User to invite to channel.                            |"
+					},
+					"response": []
+				},
+				{
+					"name": "groups.kick",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/groups.kick?token={{token}}&channel=G1234567890&user=U1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"groups.kick"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "G1234567890"
+								},
+								{
+									"key": "user",
+									"value": "U1234567890"
+								}
+							]
+						},
+						"description": "This method allows a user to remove another member from a private channel.\n\n\n| Argument | Example             | Required | Description                                          |\n|----------|---------------------|----------|------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope:`groups:write`) |\n| channel  | G1234567890         | Required | Private channel to remove user from.                         |\n| user     | U1234567890         | Required | User to remove from private channel.                         |"
+					},
+					"response": []
+				},
+				{
+					"name": "groups.leave",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/groups.leave?token={{token}}&channel=G1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"groups.leave"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "G1234567890"
+								}
+							]
+						},
+						"description": "This method is used to leave a private channel.\n\n\n\n| Argument | Example             | Required | Description                                          |\n|----------|---------------------|----------|------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope:`groups:write`) |\n| channel  | G1234567890         | Required | Private channel to leave                                     |"
+					},
+					"response": []
+				},
+				{
+					"name": "groups.list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/groups.list?token={{token}}&exclude_archived=0",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"groups.list"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "exclude_archived",
+									"value": "0"
+								}
+							]
+						},
+						"description": "This method returns a list of private channels in the team that the caller is in and archived groups that the caller was in. The list of (non-deactivated) members in each private channel is also returned.\n\n| Argument         | Example             | Required            | Description                                         |\n|------------------|---------------------|---------------------|-----------------------------------------------------|\n| token            | xxxx-xxxxxxxxx-xxxx | Required            | Authentication token (Requires scope:`groups:read`) |\n| exclude_archived | 1                   | Optional, default=0 | Don't return archived  privatechannels.                     |                   |"
+					},
+					"response": []
+				},
+				{
+					"name": "groups.mark",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/groups.mark?token={{token}}&channel=G1234567890&ts=1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"groups.mark"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "G1234567890"
+								},
+								{
+									"key": "ts",
+									"value": "1234567890"
+								}
+							]
+						},
+						"description": "This method moves the read cursor in a channel.\n\n| Argument | Example             | Required | Description                                           |\n|----------|---------------------|----------|-------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: `groups:write`) |\n| channel  | C1234567890         | Required | Private hannel to set reading cursor in.                     |\n| ts       | 1234567890          | Required | Timestamp of the most recently seen message.          |"
+					},
+					"response": []
+				},
+				{
+					"name": "groups.open",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/groups.open?token={{token}}&channel=G1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"groups.open"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "G1234567890"
+								}
+							]
+						},
+						"description": "This method opens a private channel.\n\n\n| Argument | Example             | Required | Description                                           |\n|----------|---------------------|----------|-------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: `groups:write`) |\n| channel  | C1234567890         | Required | Private channel to open                  |\n"
+					},
+					"response": []
+				},
+				{
+					"name": "groups.rename",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/channels.rename?token={{token}}&channel=G1234567890&name=channel-name",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"channels.rename"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "G1234567890"
+								},
+								{
+									"key": "name",
+									"value": "channel-name"
+								}
+							]
+						},
+						"description": "This method renames a private channel.\n\n\n| Argument | Example             | Required | Description                                          |\n|----------|---------------------|----------|------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope:channels:write) |\n| channel  | G1234567890         | Required | Private channel to rename                                    |\n| name     |                     | Required | New name for private channel.                                |"
+					},
+					"response": []
+				},
+				{
+					"name": "groups.setPurpose",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/groups.setPurpose?token={{token}}&channel=G1234567890&purpose=My Purpose",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"groups.setPurpose"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "G1234567890"
+								},
+								{
+									"key": "purpose",
+									"value": "My Purpose"
+								}
+							]
+						},
+						"description": "This method is used to change the purpose of a private channel. The calling user must be a member of the private channel.\n\n\n\n| Argument | Example             | Required | Description                                          |\n|----------|---------------------|----------|------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope:`groups:write`) |\n| channel  | G1234567890         | Required | Private channel to set the purpose of                        |\n| purpose  | My Purpose          | Required | The new purpose                                      |"
+					},
+					"response": []
+				},
+				{
+					"name": "groups.setTopic",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/groups.setTopic?token={{token}}&channel=G1234567890&topic=The New Topic",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"groups.setTopic"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "G1234567890"
+								},
+								{
+									"key": "topic",
+									"value": "The New Topic"
+								}
+							]
+						},
+						"description": "This method is used to change the topic of a private channel. The calling user must be a member of the private channel.\n\n\n| Argument | Example             | Required | Description                                          |\n|----------|---------------------|----------|------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope:`groups:write`) |\n| channel  | G1234567890         | Required | Private channel to set the topic of                          |\n| topic    | My Topic            | Required | The new topic                                        |"
+					},
+					"response": []
+				},
+				{
+					"name": "groups.unarchive",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/channels.unarchive?token={{token}}&channel=G1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"channels.unarchive"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "G1234567890"
+								}
+							]
+						},
+						"description": "This method unarchives a private channel.\n\n\n| Argument | Example             | Required | Description                                           |\n|----------|---------------------|----------|-------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: `groups:write`) |\n| channel  | G1234567890         | Required | Private channel to unarchive                                  |"
+					},
+					"response": []
+				}
+			],
+			"description": "Get info on your team's private channels.",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "im",
+			"item": [
+				{
+					"name": "im.close",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/im.close?token={{token}}&channel=D1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"im.close"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "D1234567890"
+								}
+							]
+						},
+						"description": "This method closes a direct message channel.\n\n\n\n\n| Argument | Example             | Required | Description                                     |\n|----------|---------------------|----------|-------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: im:write) |\n| channel  | D1234567890         | Required | Direct message channel to close.                |\n"
+					},
+					"response": []
+				},
+				{
+					"name": "im.history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/im.history?token={{token}}&channel=D1234567890&latest=1234567890.123456\t&oldest=now&inclusive=0&count=100&unreads=0",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"im.history"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "D1234567890"
+								},
+								{
+									"key": "latest",
+									"value": "1234567890.123456\t"
+								},
+								{
+									"key": "oldest",
+									"value": "now"
+								},
+								{
+									"key": "inclusive",
+									"value": "0"
+								},
+								{
+									"key": "count",
+									"value": "100"
+								},
+								{
+									"key": "unreads",
+									"value": "0"
+								}
+							]
+						},
+						"description": "This method returns a portion of messages/events from the specified direct message channel. To read the entire history for a direct message channel, call the method with no latest or oldest arguments, and then continue paging using the instructions below.\n\n\n\n| Argument  | Example             | Required              | Description                                                  |\n|-----------|---------------------|-----------------------|--------------------------------------------------------------|\n| token     | xxxx-xxxxxxxxx-xxxx | Required              | Authentication token (Requires scope: im:history)            |\n| channel   | D1234567890         | Required              | Direct message channel to fetch history for.                 |\n| latest    | 1234567890.123456   | Optional, default=now | End of time range of messages to include in results.         |\n| oldest    | 1234567890.123456   | Optional, default=0   | Start of time range of messages to include in results.       |\n| inclusive | 1                   | Optional, default=0   | Include messages with latest or oldest timestamp in results. |\n| count     | 100                 | Optional, default=100 | Number of messages to return, between 1 and 1000.            |\n| unreads   | 1                   | Optional, default=0   | Include unread_count_display in the output?                  |"
+					},
+					"response": []
+				},
+				{
+					"name": "im.list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/im.read?token={{token}}",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"im.read"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						},
+						"description": "This method closes a direct message channel.\n\n\n\n\n| Argument | Example             | Required | Description                                     |\n|----------|---------------------|----------|-------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: `im:read`) |\n"
+					},
+					"response": []
+				},
+				{
+					"name": "im.mark",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/im.mark?token={{token}}&channel=D1234567890&ts=1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"im.mark"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "D1234567890"
+								},
+								{
+									"key": "ts",
+									"value": "1234567890"
+								}
+							]
+						},
+						"description": "This method moves the read cursor in a direct message channel.\n\n| Argument | Example             | Required | Description                                      |\n|----------|---------------------|----------|--------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: im:write)  |\n| channel  | D1234567890         | Required | Direct message channel to set reading cursor in. |\n| ts       | 1234567890          | Required | Timestamp of the most recently seen message.     |"
+					},
+					"response": []
+				},
+				{
+					"name": "im.open",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/im.open?token={{token}}&channel=D1234567890&user=U1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"im.open"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "D1234567890"
+								},
+								{
+									"key": "user",
+									"value": "U1234567890"
+								}
+							]
+						},
+						"description": "This method opens a direct message channel.\n\n\n\n\n| Argument | Example             | Required | Description                                     |\n|----------|---------------------|----------|-------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: im:write) |\n| user     | U1234567890         | Required | User to open a direct message channel with.     |"
+					},
+					"response": []
+				}
+			],
+			"description": "Get info on your direct messages.",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "mpim",
+			"item": [
+				{
+					"name": "mpim.close",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/mpim.close?token={{token}}&channel=",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"mpim.close"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": ""
+								}
+							]
+						},
+						"description": "This method closes a multiparty direct message channel.\n\n\n\n\n| Argument | Example             | Required | Description                                     |\n|----------|---------------------|----------|-------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: mpim:write) |\n| channel  | D1234567890         | Required | MPIM to close.                |\n"
+					},
+					"response": []
+				},
+				{
+					"name": "mpim.history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/mpim.history?token={{token}}&channel=&latest=1234567890.123456\t&oldest=now&inclusive=0&count=100&unreads=0",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"mpim.history"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": ""
+								},
+								{
+									"key": "latest",
+									"value": "1234567890.123456\t"
+								},
+								{
+									"key": "oldest",
+									"value": "now"
+								},
+								{
+									"key": "inclusive",
+									"value": "0"
+								},
+								{
+									"key": "count",
+									"value": "100"
+								},
+								{
+									"key": "unreads",
+									"value": "0"
+								}
+							]
+						},
+						"description": "This method returns a portion of messages/events from the specified multiparty direct message channel. To read the entire history for a multiparty direct message, call the method with no latest or oldest arguments, and then continue paging using the instructions below.\n\n\n| Argument  | Example             | Required              | Description                                                  |\n|-----------|---------------------|-----------------------|--------------------------------------------------------------|\n| token     | xxxx-xxxxxxxxx-xxxx | Required              | Authentication token (Requires scope: mpim:history)            |\n| channel   | D1234567890         | Required              | Multiparty direct message to fetch history for.                 |\n| latest    | 1234567890.123456   | Optional, default=now | End of time range of messages to include in results.         |\n| oldest    | 1234567890.123456   | Optional, default=0   | Start of time range of messages to include in results.       |\n| inclusive | 1                   | Optional, default=0   | Include messages with latest or oldest timestamp in results. |\n| count     | 100                 | Optional, default=100 | Number of messages to return, between 1 and 1000.            |\n| unreads   | 1                   | Optional, default=0   | Include unread_count_display in the output?                  |"
+					},
+					"response": []
+				},
+				{
+					"name": "mpim.list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/mpim.read?token={{token}}",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"mpim.read"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						},
+						"description": "This method returns a list of all multiparty direct message channels that the user has.\n\n\n\n\n| Argument | Example             | Required | Description                                     |\n|----------|---------------------|----------|-------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: `mpim:read`) |\n"
+					},
+					"response": []
+				},
+				{
+					"name": "mpim.mark",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/mpim.mark?token={{token}}&channel=G1234567890&ts=1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"mpim.mark"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "G1234567890"
+								},
+								{
+									"key": "ts",
+									"value": "1234567890"
+								}
+							]
+						},
+						"description": "This method moves the read cursor in a multiparty direct message channel.\n\n\n\n| Argument | Example             | Required | Description                                      |\n|----------|---------------------|----------|--------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: mpim:write)  |\n| channel  | G1234567890         | Required | multiparty direct message channel to set reading cursor in. |\n| ts       | 1234567890          | Required | Timestamp of the most recently seen message.     |"
+					},
+					"response": []
+				},
+				{
+					"name": "mpim.open",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/mpim.open?token={{token}}&users=U1234567890,U2345678901,U345678901",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"mpim.open"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "users",
+									"value": "U1234567890,U2345678901,U345678901"
+								}
+							]
+						},
+						"description": "This method opens a multiparty direct message.\n\nOpening a multiparty direct message takes a list of up-to 8 encoded user ids. If there is no MPIM already created that includes that exact set of members, a new MPIM will be created. Subsequent calls to mpim.open with the same set of users will return the already existing MPIM conversation.\n\n| Argument | Example                             | Required | Description                                                                                               |\n|----------|-------------------------------------|----------|-----------------------------------------------------------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx                 | Required | Authentication token (Requires scope: mpim:write)                                                         |\n| users    | U1234567890,U2345678901,U3456789012 | Required | Comma separated lists of users. The ordering of the users is preserved whenever a MPIM group is returned. |er a MPIM group is returned.  |"
+					},
+					"response": []
+				}
+			],
+			"description": "Get info on your multiparty direct messages.",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "oauth",
+			"item": [
+				{
+					"name": "oauth.access",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/oauth.access?client_id=4b39e9-752c4&client_secret=33fea0113f5b&code=ccdaa72ad&redirect_uri=http://example.com",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"oauth.access"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "4b39e9-752c4"
+								},
+								{
+									"key": "client_secret",
+									"value": "33fea0113f5b"
+								},
+								{
+									"key": "code",
+									"value": "ccdaa72ad"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://example.com"
+								}
+							]
+						},
+						"description": "This method allows you to exchange a temporary OAuth code for an API access token. This is used as part of the OAuth authentication flow.\n\nAs discussed in RFC 6749 it is possible to supply the Client ID and Client Secret using the HTTP Basic authentication scheme. If HTTP Basic authentication is used you do not need to supply the client_id and client_secret parameters as part of the request.\n\nKeep your tokens secure. Do not share tokens with users or anyone else.\n\n| Argument      | Example            | Required | Description                                                     |\n|---------------|--------------------|----------|-----------------------------------------------------------------|\n| client_id     | 4b39e9-752c4       | Required | Issued when you created your application.                       |\n| client_secret | 33fea0113f5b1      | Required | Issued when you created your application.                       |\n| code          | ccdaa72ad          | Required | The code param returned via the OAuth callback.                 |\n| redirect_uri  | http://example.com | Optional | This must match the originally submitted URI (if one was sent). |"
+					},
+					"response": []
+				}
+			],
+			"description": "This method allows you to exchange a temporary OAuth code for an API access token. This is used as part of the OAuth authentication flow.\n\nAs discussed in RFC 6749 it is possible to supply the Client ID and Client Secret using the HTTP Basic authentication scheme. If HTTP Basic authentication is used you do not need to supply the client_id and client_secret parameters as part of the request.\n\nKeep your tokens secure. Do not share tokens with users or anyone else.\n\n| Argument      | Example            | Required | Description                                                     |\n|---------------|--------------------|----------|-----------------------------------------------------------------|\n| client_id     | 4b39e9-752c4       | Required | Issued when you created your application.                       |\n| client_secret | 33fea0113f5b1      | Required | Issued when you created your application.                       |\n| code          | ccdaa72ad          | Required | The code param returned via the OAuth callback.                 |\n| redirect_uri  | http://example.com | Optional | This must match the originally submitted URI (if one was sent). |",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "pins",
+			"item": [
+				{
+					"name": "pins.add",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/pins.add?token={{token}}&channel=C1234567890&file=F1234567890&file_comment=Fc1234567890&timestamp=1234567890.123456",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"pins.add"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "C1234567890"
+								},
+								{
+									"key": "file",
+									"value": "F1234567890"
+								},
+								{
+									"key": "file_comment",
+									"value": "Fc1234567890"
+								},
+								{
+									"key": "timestamp",
+									"value": "1234567890.123456"
+								}
+							]
+						},
+						"description": "This method pins an item (file, file comment, channel message, or group message) to a particular channel. The channel argument is required and one of file, file_comment, or timestamp must also be specified.\n\n| Argument     | Example             | Required | Description                                       |\n|--------------|---------------------|----------|---------------------------------------------------|\n| token        | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: pins:write) |\n| channel      | C1234567890         | Required | Channel to pin the item in.                       |\n| file         | F1234567890         | Optional | File to pin.                                      |\n| file_comment | Fc1234567890        | Optional | File comment to pin.                              |\n| timestamp    | 1234567890.123456   | Optional | Timestamp of the message to pin.                  |"
+					},
+					"response": []
+				},
+				{
+					"name": "pins.list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/pins.list?token={{token}}&channel=C1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"pins.list"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "C1234567890"
+								}
+							]
+						},
+						"description": "This method lists the items pinned to a channel.\n\n\n| Argument | Example             | Required | Description                                      |\n|----------|---------------------|----------|--------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: pins:read) |\n| channel  | C1234567890         | Required | Channel to get pinned items for.                 |                "
+					},
+					"response": []
+				},
+				{
+					"name": "pins.remove",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/pins.remove?token={{token}}&channel=C1234567890&file=F1234567890&file_comment=Fc1234567890&timestamp=1234567890.123456\t",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"pins.remove"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "channel",
+									"value": "C1234567890"
+								},
+								{
+									"key": "file",
+									"value": "F1234567890"
+								},
+								{
+									"key": "file_comment",
+									"value": "Fc1234567890"
+								},
+								{
+									"key": "timestamp",
+									"value": "1234567890.123456\t"
+								}
+							]
+						},
+						"description": "This method un-pins an item (file, file comment, channel message, or group message) from a channel. The channel argument is required and one of file, file_comment, or timestamp must also be specified.\n\n\n| Argument     | Example             | Required | Description                                       |\n|--------------|---------------------|----------|---------------------------------------------------|\n| token        | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: pins:write) |\n| channel      | C1234567890         | Required | Channel where the item is pinned to.              |\n| file         | F1234567890         | Optional | File to un-pin.                                   |\n| file_comment | Fc1234567890        | Optional | File comment to un-pin.                           |\n| timestamp    | 1234567890.123456   | Optional | Timestamp of the message to un-pin.               |"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "reactions",
+			"item": [
+				{
+					"name": "reactions.add",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/reactions.add?token={{token}}&name=thumbsup&file=F1234567890&file_comment=Fc1234567890&channel=C1234567890&timestamp=1234567890.123456",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"reactions.add"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "name",
+									"value": "thumbsup"
+								},
+								{
+									"key": "file",
+									"value": "F1234567890"
+								},
+								{
+									"key": "file_comment",
+									"value": "Fc1234567890"
+								},
+								{
+									"key": "channel",
+									"value": "C1234567890"
+								},
+								{
+									"key": "timestamp",
+									"value": "1234567890.123456"
+								}
+							]
+						},
+						"description": "This method adds a reaction (emoji) to an item (file, file comment, channel message, group message, or direct message). One of file, file_comment, or the combination of channel and timestamp must be specified.\n\n| Argument     | Example             | Required | Description                                              |\n|--------------|---------------------|----------|----------------------------------------------------------|\n| token        | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: reactions:write)   |\n| name         | thumbsup            | Required | Reaction (emoji) name.                                   |\n| file         | F1234567890         | Optional | File to add reaction to.                                 |\n| file_comment | Fc1234567890        | Optional | File comment to add reaction to.                         |\n| channel      | C1234567890         | Optional | Channel where the message to add reaction to was posted. |\n| timestamp    | 1234567890.123456   | Optional | Timestamp of the message to add reaction to.             |"
+					},
+					"response": []
+				},
+				{
+					"name": "reactions.get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/reactions.get?token={{token}}&file=F1234567890&file_comment=Fc1234567890&channel=C1234567890&timestamp=1234567890.123456&full",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"reactions.get"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "file",
+									"value": "F1234567890"
+								},
+								{
+									"key": "file_comment",
+									"value": "Fc1234567890"
+								},
+								{
+									"key": "channel",
+									"value": "C1234567890"
+								},
+								{
+									"key": "timestamp",
+									"value": "1234567890.123456"
+								},
+								{
+									"key": "full",
+									"value": null
+								}
+							]
+						},
+						"description": "This method returns a list of all reactions for a single item (file, file comment, channel message, group message, or direct message.\n\n| Argument     | Example             | Required | Description                                                |\n|--------------|---------------------|----------|------------------------------------------------------------|\n| token        | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: reactions:read)      |\n| file         | F1234567890         | Optional | File to get reactions for.                                 |\n| file_comment | Fc1234567890        | Optional | File comment to get reactions for.                         |\n| channel      | C1234567890         | Optional | Channel where the message to get reactions for was posted. |\n| timestamp    | 1234567890.123456   | Optional | Timestamp of the message to get reactions for.             |\n| full         |                     | Optional | If true always return the complete reaction list.          |"
+					},
+					"response": []
+				},
+				{
+					"name": "reactions.list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/reactions.list?token={{token}}&user=U1234567890&full&count=100&page=1",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"reactions.list"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "user",
+									"value": "U1234567890"
+								},
+								{
+									"key": "full",
+									"value": null
+								},
+								{
+									"key": "count",
+									"value": "100"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						},
+						"description": "This method returns a list of all items (file, file comment, channel message, group message, or direct message) reacted to by a user.\n\n| Argument | Example             | Required              | Description                                                    |\n|----------|---------------------|-----------------------|----------------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required              | Authentication token (Requires scope: reactions:read)          |\n| user     | U1234567890         | Optional              | Show reactions made by this user. Defaults to the authed user. |\n| full     |                     | Optional              | If true always return the complete reaction list.              |\n| count    | 20                  | Optional, default=100 | Number of items to return per page.                            |\n| page     | 2                   | Optional, default=1   | Page number of results to return.                              |"
+					},
+					"response": []
+				},
+				{
+					"name": "reactions.remove",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/reactions.remove?token={{token}}&name=thumbsup&file=F1234567890&file_comment=Fc1234567890&channel=C1234567890&timestamp=1234567890.123456\t",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"reactions.remove"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "name",
+									"value": "thumbsup"
+								},
+								{
+									"key": "file",
+									"value": "F1234567890"
+								},
+								{
+									"key": "file_comment",
+									"value": "Fc1234567890"
+								},
+								{
+									"key": "channel",
+									"value": "C1234567890"
+								},
+								{
+									"key": "timestamp",
+									"value": "1234567890.123456\t"
+								}
+							]
+						},
+						"description": "This method removes a reaction (emoji) from an item (file, file comment, channel message, group message, or direct message). One of file, file_comment, or the combination of channel and timestamp must be specified.\n\n| Argument     | Example             | Required | Description                                                   |\n|--------------|---------------------|----------|---------------------------------------------------------------|\n| token        | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: reactions:write)        |\n| name         | thumbsup            | Required | Reaction (emoji) name.                                        |\n| file         | F1234567890         | Optional | File to remove reaction from.                                 |\n| file_comment | Fc1234567890        | Optional | File comment to remove reaction from.                         |\n| channel      | C1234567890         | Optional | Channel where the message to remove reaction from was posted. |\n| timestamp    | 1234567890.123456   | Optional | Timestamp of the message to remove reaction from.             |"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "rtm",
+			"item": [
+				{
+					"name": "rtm.start",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/rtm.start?token&simple_latest&no_unreads&mpim_aware",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"rtm.start"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null
+								},
+								{
+									"key": "simple_latest",
+									"value": null
+								},
+								{
+									"key": "no_unreads",
+									"value": null
+								},
+								{
+									"key": "mpim_aware",
+									"value": null
+								}
+							]
+						},
+						"description": "This method starts a Real Time Messaging API session. Refer to the RTM API documentation for full details on how to use the RTM API.\n\n| Argument      | Example             | Required | Description                                                                             |\n|---------------|---------------------|----------|-----------------------------------------------------------------------------------------|\n| token         | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: client)                                           |\n| simple_latest |                     | Optional | Return timestamp only for latest message object of each channel (improves performance). |\n| no_unreads    |                     | Optional | Skip unread counts for each channel (improves performance).                             |\n| mpim_aware    |                     | Optional | Returns MPIMs to the client in the API response.                                        |"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "search",
+			"item": [
+				{
+					"name": "search.all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/search.all?token=xxxx-xxxxxxxxx-xxxx\t&query=pickleface&sort=timestamp&sort_dir=asc&highlight=1&count=20&page=1",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"search.all"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "xxxx-xxxxxxxxx-xxxx\t"
+								},
+								{
+									"key": "query",
+									"value": "pickleface"
+								},
+								{
+									"key": "sort",
+									"value": "timestamp"
+								},
+								{
+									"key": "sort_dir",
+									"value": "asc"
+								},
+								{
+									"key": "highlight",
+									"value": "1"
+								},
+								{
+									"key": "count",
+									"value": "20"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						},
+						"description": "This method allows to to search both messages and files in a single call.\n\n| Argument  | Example             | Required                | Description                                                      |\n|-----------|---------------------|-------------------------|------------------------------------------------------------------|\n| token     | xxxx-xxxxxxxxx-xxxx | Required                | Authentication token (Requires scope: search:read)               |\n| query     | pickleface          | Required                | Search query. May contains booleans, etc.                        |\n| sort      | timestamp           | Optional, default=score | Return matches sorted by either score or timestamp.              |\n| sort_dir  | asc                 | Optional, default=desc  | Change sort direction to ascending (asc) or descending (desc).   |\n| highlight | 1                   | Optional                | Pass a value of 1 to enable query highlight markers (see below). |\n| count     | 20                  | Optional, default=20    | Number of items to return per page.                              |\n| page      | 2                   | Optional, default=1     | Page number of results to return.                                |"
+					},
+					"response": []
+				},
+				{
+					"name": "search.files",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/search.files?token=xxxx-xxxxxxxxx-xxxx\t&query=pickleface&sort=timestamp&sort_dir=asc&highlight=1&count=20&page=1",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"search.files"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "xxxx-xxxxxxxxx-xxxx\t"
+								},
+								{
+									"key": "query",
+									"value": "pickleface"
+								},
+								{
+									"key": "sort",
+									"value": "timestamp"
+								},
+								{
+									"key": "sort_dir",
+									"value": "asc"
+								},
+								{
+									"key": "highlight",
+									"value": "1"
+								},
+								{
+									"key": "count",
+									"value": "20"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						},
+						"description": "This method returns files matching a search query.\n\n| Argument  | Example             | Required                | Description                                                      |\n|-----------|---------------------|-------------------------|------------------------------------------------------------------|\n| token     | xxxx-xxxxxxxxx-xxxx | Required                | Authentication token (Requires scope: search:read)               |\n| query     | pickleface          | Required                | Search query. May contains booleans, etc.                        |\n| sort      | timestamp           | Optional, default=score | Return matches sorted by either score or timestamp.              |\n| sort_dir  | asc                 | Optional, default=desc  | Change sort direction to ascending (asc) or descending (desc).   |\n| highlight | 1                   | Optional                | Pass a value of 1 to enable query highlight markers (see below). |\n| count     | 20                  | Optional, default=20    | Number of items to return per page.                              |\n| page      | 2                   | Optional, default=1     | Page number of results to return.                                |"
+					},
+					"response": []
+				},
+				{
+					"name": "search.messages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/search.messages?token=xxxx-xxxxxxxxx-xxxx\t&query=pickleface&sort=timestamp&sort_dir=asc&highlight=1&count=20&page=1",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"search.messages"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "xxxx-xxxxxxxxx-xxxx\t"
+								},
+								{
+									"key": "query",
+									"value": "pickleface"
+								},
+								{
+									"key": "sort",
+									"value": "timestamp"
+								},
+								{
+									"key": "sort_dir",
+									"value": "asc"
+								},
+								{
+									"key": "highlight",
+									"value": "1"
+								},
+								{
+									"key": "count",
+									"value": "20"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						},
+						"description": "This method returns messages matching a search query.\n\n\n| Argument  | Example             | Required                | Description                                                      |\n|-----------|---------------------|-------------------------|------------------------------------------------------------------|\n| token     | xxxx-xxxxxxxxx-xxxx | Required                | Authentication token (Requires scope: search:read)               |\n| query     | pickleface          | Required                | Search query. May contains booleans, etc.                        |\n| sort      | timestamp           | Optional, default=score | Return matches sorted by either score or timestamp.              |\n| sort_dir  | asc                 | Optional, default=desc  | Change sort direction to ascending (asc) or descending (desc).   |\n| highlight | 1                   | Optional                | Pass a value of 1 to enable query highlight markers (see below). |\n| count     | 20                  | Optional, default=20    | Number of items to return per page.                              |\n| page      | 2                   | Optional, default=1     | Page number of results to return.                                |"
+					},
+					"response": []
+				}
+			],
+			"description": "Search your team's files and messages.",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "stars",
+			"item": [
+				{
+					"name": "stars.add",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/stars.add?token={{token}}&file=F1234567890&file_comment=Fc1234567890&channel=C1234567890&timestamp=1234567890.123456",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"stars.add"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "file",
+									"value": "F1234567890"
+								},
+								{
+									"key": "file_comment",
+									"value": "Fc1234567890"
+								},
+								{
+									"key": "channel",
+									"value": "C1234567890"
+								},
+								{
+									"key": "timestamp",
+									"value": "1234567890.123456"
+								}
+							]
+						},
+						"description": "This method adds a star to an item (message, file, file comment, channel, private group, or DM) on behalf of the authenticated user. One of file, file_comment, channel, or the combination of channel and timestamp must be specified.\n\n\n| Argument     | Example             | Required | Description                                                                                           |\n|--------------|---------------------|----------|-------------------------------------------------------------------------------------------------------|\n| token        | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: stars:write)                                                    |\n| file         | F1234567890         | Optional | File to add star to.                                                                                  |\n| file_comment | Fc1234567890        | Optional | File comment to add star to.                                                                          |\n| channel      | C1234567890         | Optional | Channel to add star to, or channel where the message to add star to was posted (used with timestamp). |\n| timestamp    | 1234567890.123456   | Optional | Timestamp of the message to add star to.                                                              |"
+					},
+					"response": []
+				},
+				{
+					"name": "stars.list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/stars.list?token={{token}}&users=U1234567890&count=100&page=1",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"stars.list"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "users",
+									"value": "U1234567890"
+								},
+								{
+									"key": "count",
+									"value": "100"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						},
+						"description": "This method lists the items starred by a user.\n\n\n| Argument | Example             | Required              | Description                                           |\n|----------|---------------------|-----------------------|-------------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required              | Authentication token (Requires scope: stars:read)     |\n| user     | U1234567890         | Optional              | Show stars by this user. Defaults to the authed user. |\n| count    | 20                  | Optional, default=100 | Number of items to return per page.                   |\n| page     | 2                   | Optional, default=1   | Page number of results to return.                     |"
+					},
+					"response": []
+				},
+				{
+					"name": "stars.remove",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/pins.remove?token={{token}}&file=F1234567890&file_comment=Fc1234567890&timestamp=1234567890.123456\t&channel=C1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"pins.remove"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "file",
+									"value": "F1234567890"
+								},
+								{
+									"key": "file_comment",
+									"value": "Fc1234567890"
+								},
+								{
+									"key": "timestamp",
+									"value": "1234567890.123456\t"
+								},
+								{
+									"key": "channel",
+									"value": "C1234567890"
+								}
+							]
+						},
+						"description": "This method removes a star from an item (message, file, file comment, channel, private group, or DM) on behalf of the authenticated user. One of file, file_comment, channel, or the combination of channel and timestamp must be specified.\n\n\n| Argument     | Example             | Required | Description                                                                                                     |\n|--------------|---------------------|----------|-----------------------------------------------------------------------------------------------------------------|\n| token        | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: stars:write)                                                              |\n| file         | F1234567890         | Optional | File to remove star from.                                                                                       |\n| file_comment | Fc1234567890        | Optional | File comment to remove star from.                                                                               |\n| channel      | C1234567890         | Optional | Channel to remove star from, or channel where the message to remove star from was posted (used with timestamp). |\n| timestamp    | 1234567890.123456   | Optional | Timestamp of the message to remove star from.                                                                   |"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "team",
+			"item": [
+				{
+					"name": "team.accessLogs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/team.accessLogs?token={{token}}&count=100&page=1",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"team.accessLogs"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "count",
+									"value": "100"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						},
+						"description": "This method is used to get the access logs for users on a team.\n\n| Argument | Example             | Required              | Description                                  |\n|----------|---------------------|-----------------------|----------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required              | Authentication token (Requires scope: admin) |\n| count    | 20                  | Optional, default=100 | Number of items to return per page.          |\n| page     | 2                   | Optional, default=1   | Page number of results to return.            |"
+					},
+					"response": []
+				},
+				{
+					"name": "team.info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/team.info?token={{token}}",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"team.info"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						},
+						"description": "This method provides information about your team.\n\n\n| Argument | Example             | Required              | Description                                  |\n|----------|---------------------|-----------------------|----------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required              | Authentication token (Requires scope: team:read) |\n"
+					},
+					"response": []
+				},
+				{
+					"name": "team.integrationLogs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/team.integrationLogs?token={{token}}&service_id&app_id&user=U1234567890&change_type&count=100&page=1",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"team.integrationLogs"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "service_id",
+									"value": null
+								},
+								{
+									"key": "app_id",
+									"value": null
+								},
+								{
+									"key": "user",
+									"value": "U1234567890"
+								},
+								{
+									"key": "change_type",
+									"value": null
+								},
+								{
+									"key": "count",
+									"value": "100"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						},
+						"description": "This method is used to get the access logs for users on a team.\n\n| Argument    | Example             | Required              | Description                                                         |\n|-------------|---------------------|-----------------------|---------------------------------------------------------------------|\n| token       | xxxx-xxxxxxxxx-xxxx | Required              | Authentication token (Requires scope: admin)                        |\n| service_id  |                     | Optional              | Filter logs to this service. Defaults to all logs.                  |\n| app_id      |                     | Optional              | Filter logs to this Slack app. Defaults to all logs.                |\n| user        | U1234567890         | Optional              | Filter logs generated by this user’s actions. Defaults to all logs. |\n| change_type | added               | Optional              | Filter logs with this change type. Defaults to all logs.            |\n| count       | 20                  | Optional, default=100 | Number of items to return per page.                                 |\n| page        | 2                   | Optional, default=1   | Page number of results to return.                                   |"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "usergroups",
+			"item": [
+				{
+					"name": "usergroups.create",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/usergroups.create?token={{token}}&name=My Test Team&handle=&description&channels&include_count=1",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"usergroups.create"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "name",
+									"value": "My Test Team"
+								},
+								{
+									"key": "handle",
+									"value": ""
+								},
+								{
+									"key": "description",
+									"value": null
+								},
+								{
+									"key": "channels",
+									"value": null
+								},
+								{
+									"key": "include_count",
+									"value": "1"
+								}
+							]
+						},
+						"description": "This method is used to create a user group.\n\n| Argument      | Example             | Required | Description                                                                                 |\n|---------------|---------------------|----------|---------------------------------------------------------------------------------------------|\n| token         | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: usergroups:write)                                     |\n| name          | My Test Team        | Required | A name for the user group. Must be unique among user groups.                                |\n| handle        |                     | Optional | A mention handle. Must be unique among channels, users and user groups.                     |\n| description   |                     | Optional | A short description of the user group.                                                      |\n| channels      |                     | Optional | A comma separated string of encoded channel IDs for which the user group uses as a default. |\n| include_count | 1                   | Optional | Include the number of users in each user group.                                             |"
+					},
+					"response": []
+				},
+				{
+					"name": "usergroups.disable",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/usergroups.disable?token={{token}}&usergroup=S0604QSJC&include_count=1",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"usergroups.disable"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "usergroup",
+									"value": "S0604QSJC"
+								},
+								{
+									"key": "include_count",
+									"value": "1"
+								}
+							]
+						},
+						"description": "This method disables an existing user group.\n\n\n| Argument      | Example             | Required | Description                                             |\n|---------------|---------------------|----------|---------------------------------------------------------|\n| token         | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: usergroups:write) |\n| usergroup     | S0604QSJC           | Required | The encoded ID of the user group to disable.            |\n| include_count | 1                   | Optional | Include the number of users in the user group.          |"
+					},
+					"response": []
+				},
+				{
+					"name": "usergroups.enable",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/usergroups.enable?token={{token}}&usergroup=S0604QSJC&include_count=1",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"usergroups.enable"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "usergroup",
+									"value": "S0604QSJC"
+								},
+								{
+									"key": "include_count",
+									"value": "1"
+								}
+							]
+						},
+						"description": "This method enables a user group which was previously disabled.\n\n\n| Argument      | Example             | Required | Description                                             |\n|---------------|---------------------|----------|---------------------------------------------------------|\n| token         | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: usergroups:write) |\n| usergroup     | S0604QSJC           | Required | The encoded ID of the user group to enable.            |\n| include_count | 1                   | Optional | Include the number of users in the user group.          |"
+					},
+					"response": []
+				},
+				{
+					"name": "usergroups.list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/usergroups.list?token={{token}}&include_disabled=1&include_count=1&include_users=1",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"usergroups.list"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "include_disabled",
+									"value": "1"
+								},
+								{
+									"key": "include_count",
+									"value": "1"
+								},
+								{
+									"key": "include_users",
+									"value": "1"
+								}
+							]
+						},
+						"description": "This method returns a list of all user groups in the team. This can optionally include disabled user groups.\n| Argument         | Example             | Required | Description                                            |\n|------------------|---------------------|----------|--------------------------------------------------------|\n| token            | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: usergroups:read) |\n| include_disabled | 1                   | Optional | Include disabled user groups.                          |\n| include_count    | 1                   | Optional | Include the number of users in each user group.        |\n| include_users    | 1                   | Optional | Include the list of users for each user group.         |"
+					},
+					"response": []
+				},
+				{
+					"name": "usergroups.update",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/usergroups.update?token={{token}}&usergroup=S0604QSJC&name=My Test Team\t&handle=&description=&channels&include_count=1",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"usergroups.update"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "usergroup",
+									"value": "S0604QSJC"
+								},
+								{
+									"key": "name",
+									"value": "My Test Team\t"
+								},
+								{
+									"key": "handle",
+									"value": ""
+								},
+								{
+									"key": "description",
+									"value": ""
+								},
+								{
+									"key": "channels",
+									"value": null
+								},
+								{
+									"key": "include_count",
+									"value": "1"
+								}
+							]
+						},
+						"description": "This method updates the properties of an existing user group.\n\n| Argument      | Example             | Required | Description                                                                                 |\n|---------------|---------------------|----------|---------------------------------------------------------------------------------------------|\n| token         | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: usergroups:write)                                     |\n| usergroup     | S0604QSJC           | Required | The encoded ID of the user group to update.                                                 |\n| name          | My Test Team        | Optional | A name for the user group. Must be unique among user groups.                                |\n| handle        |                     | Optional | A mention handle. Must be unique among channels, users and user groups.                     |\n| description   |                     | Optional | A short description of the user group.                                                      |\n| channels      |                     | Optional | A comma separated string of encoded channel IDs for which the user group uses as a default. |\n| include_count | 1                   | Optional | Include the number of users in the user group.                                              |"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "usergroups.users",
+			"item": [
+				{
+					"name": "usergroups.users.list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/usergroups.users.list?token={{token}}&usergroup=S0604QSJC\t&include_disabled=1",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"usergroups.users.list"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "usergroup",
+									"value": "S0604QSJC\t"
+								},
+								{
+									"key": "include_disabled",
+									"value": "1"
+								}
+							]
+						},
+						"description": "This method returns a list of all users within a user group.\n\n\n\n| Argument         | Example             | Required | Description                                            |\n|------------------|---------------------|----------|--------------------------------------------------------|\n| token            | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: usergroups:read) |\n| usergroup        | S0604QSJC           | Required | The encoded ID of the user group to update.            |\n| include_disabled | 1                   | Optional | Allow results that involve disabled user groups.       |\n"
+					},
+					"response": []
+				},
+				{
+					"name": "usergroups.users.update",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/usergroups.users.update?token={{token}}&usergroup=S0604QSJC&users=U060R4BJ4,U060RNRC&include_count=1",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"usergroups.users.update"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "usergroup",
+									"value": "S0604QSJC"
+								},
+								{
+									"key": "users",
+									"value": "U060R4BJ4,U060RNRC"
+								},
+								{
+									"key": "include_count",
+									"value": "1"
+								}
+							]
+						},
+						"description": "This method updates the list of users that belong to a user group. This method replaces all users in a user group with the list of users provided in the users parameter.\n| Argument      | Example             | Required | Description                                                                                              |\n|---------------|---------------------|----------|----------------------------------------------------------------------------------------------------------|\n| token         | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: usergroups:write)                                                  |\n| usergroup     | S0604QSJC           | Required | The encoded ID of the user group to update.                                                              |\n| users         | U060R4BJ4,U060RNRCZ | Required | A comma separated string of encoded user IDs that represent the entire list of users for the user group. |\n| include_count | 1                   | Optional | Include the number of users in the user group.                                                           |"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "users.getPresence",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/users.getPresence?token={{token}}&users=U1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"users.getPresence"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "users",
+									"value": "U1234567890"
+								}
+							]
+						},
+						"description": "This method lets you find out information about a user's presence. Consult the presence documentation for more details.\n\n\n| Argument  | Example             | Required              | Description                                                  |\n|-----------|---------------------|-----------------------|--------------------------------------------------------------|\n| token     | xxxx-xxxxxxxxx-xxxx | Required              | Authentication token (Requires scope: users:read)         |\n| user   | U1234567890         | Required              | \tUser to get presence info on. Defaults to the authed user.                                      |\n"
+					},
+					"response": []
+				},
+				{
+					"name": "users.info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/users.info?token={{token}}&users=U1234567890",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"users.info"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "users",
+									"value": "U1234567890"
+								}
+							]
+						},
+						"description": "This method returns information about a team member.\n\n\n\n| Argument  | Example             | Required              | Description                                                  |\n|-----------|---------------------|-----------------------|--------------------------------------------------------------|\n| token     | xxxx-xxxxxxxxx-xxxx | Required              | Authentication token (Requires scope: users:read)         |\n| user   | U1234567890         | Required              | Users to get info on.                                      |\n"
+					},
+					"response": []
+				},
+				{
+					"name": "users.list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/users.list?token={{token}}&presence=1",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"users.list"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "presence",
+									"value": "1"
+								}
+							]
+						},
+						"description": "This method returns a list of all users in the team. This includes deleted/deactivated users.\n\nTo retrieve a list of private channels, use groups.list\n\n| Argument         | Example             | Required            | Description                                         |\n|------------------|---------------------|---------------------|-----------------------------------------------------|\n| token            | xxxx-xxxxxxxxx-xxxx | Required            | Authentication token (Requires scope:users:read) |\n| presence | 1                   | Optional | Whether to include presence data in the output     |                   |"
+					},
+					"response": []
+				},
+				{
+					"name": "users.setActive",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/users.setActive?token={{token}}",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"users.setActive"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						},
+						"description": "This method lets the slack messaging server know that the authenticated user is currently active. Consult the presence documentation for more details.\n\n\n| Argument  | Example             | Required              | Description                                                  |\n|-----------|---------------------|-----------------------|--------------------------------------------------------------|\n| token     | xxxx-xxxxxxxxx-xxxx | Required              | Authentication token (Requires scope: users:read)         |\n"
+					},
+					"response": []
+				},
+				{
+					"name": "users.setPresence",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://slack.com/api/users.setPresence?token={{token}}&presence=away",
+							"protocol": "https",
+							"host": [
+								"slack",
+								"com"
+							],
+							"path": [
+								"api",
+								"users.setPresence"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "presence",
+									"value": "away"
+								}
+							]
+						},
+						"description": "This method lets you set the calling user's manual presence. Consult the presence documentation for more details.\n\n| Argument | Example             | Required | Description                                        |\n|----------|---------------------|----------|----------------------------------------------------|\n| token    | xxxx-xxxxxxxxx-xxxx | Required | Authentication token (Requires scope: users:write) |\n| presence | away                | Required | Either auto or away                                |"
+					},
+					"response": []
+				}
+			],
+			"description": "Get info on members of your Slack team.",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "incoming-webhooks",
+			"item": [
+				{
+					"name": "Slack Cortival ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
